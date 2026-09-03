@@ -43,12 +43,18 @@ WRITE_LOCK = threading.Lock()
 def read_table_with_format(path):
     """Lit le fichier CSV avec détection automatique des encodages et séparateurs,
     et renvoie aussi l'encodage/séparateur détectés (pour pouvoir réécrire le fichier
-    dans le même format)."""
+    dans le même format).
+
+    IMPORTANT : lecture forcée en texte (dtype=str, keep_default_na=False) pour éviter
+    qu'une colonne entièrement vide (ex. "Traite" avant tout traitement) soit interprétée
+    par pandas comme un type numérique (float/NaN), ce qui provoquerait une erreur
+    ("Invalid value 'Oui' for dtype 'float64'") dès qu'on y écrit du texte ensuite.
+    """
     trials = [("utf-8", ","), ("utf-8", ";"), ("utf-8", "\t"), ("utf-8-sig", ","), ("utf-8-sig", ";"),
               ("utf-8-sig", "\t"), ("cp1252", ","), ("cp1252", ";"), ("cp1252", "\t")]
     for enc, sep in trials:
         try:
-            df = pd.read_csv(path, encoding=enc, sep=sep)
+            df = pd.read_csv(path, encoding=enc, sep=sep, dtype=str, keep_default_na=False)
             if len(df.columns) >= 1:
                 return df, enc, sep
         except Exception:
@@ -178,7 +184,7 @@ def marquer_traite(colonne_url, url_traitee, statut, enc, sep):
     """
     with WRITE_LOCK:
         try:
-            df_actuel = pd.read_csv(FICHIER_ENTREE, encoding=enc, sep=sep)
+            df_actuel = pd.read_csv(FICHIER_ENTREE, encoding=enc, sep=sep, dtype=str, keep_default_na=False)
         except Exception:
             df_actuel = read_table(FICHIER_ENTREE)
 
