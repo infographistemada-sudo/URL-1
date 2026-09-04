@@ -226,27 +226,36 @@ def verifier_emploi_actuel(nom_entreprise, entreprise_reelle, body, periode=""):
     """
     texte_combine_norm = normaliser(f"{entreprise_reelle} {body}")
 
-    # Une période détectée avec une date de fin explicite (pas "aujourd'hui"/"present")
-    # est un signal fort que le poste est terminé.
+    # 1. PRIORITAIRE : si le titre indique EXPLICITEMENT une autre entreprise que celle
+    #    recherchée, on rejette tout de suite. Sans cette priorité, une période "en cours"
+    #    détectée pouvait valider à tort un profil dont le titre indique pourtant une
+    #    entreprise différente (ex. période "en cours" chez une autre société).
+    if entreprise_reelle and not entreprise_correspond(nom_entreprise, entreprise_reelle):
+        return False, f"Non - entreprise differente indiquee dans le titre : {entreprise_reelle}"
+
+    # 2. Période détectée avec une date de fin explicite (pas "aujourd'hui"/"present")
+    #    = signal fort que le poste est terminé.
     if periode:
         periode_norm = normaliser(periode)
         if not any(mot in periode_norm for mot in ["aujourd", "present"]):
             return False, f"Non - periode terminee detectee : {periode}"
 
+    # 3. Indices textuels d'ancien poste
     if any(mot in texte_combine_norm for mot in INDICES_ANCIEN_POSTE):
         return False, "Non - indice d'ancien poste detecte"
 
-    # Une période détectée se terminant "aujourd'hui"/"present" est une confirmation forte,
-    # même si l'entreprise n'a pas pu être confirmée autrement.
+    # 4. Période confirmée "en cours" (et on sait déjà, grâce à l'étape 1, qu'elle ne
+    #    contredit pas une autre entreprise indiquée dans le titre)
     if periode:
         periode_norm = normaliser(periode)
         if any(mot in periode_norm for mot in ["aujourd", "present"]):
             return True, f"Oui - periode en cours detectee : {periode}"
 
+    # 5. Entreprise confirmée dans le titre
     if entreprise_reelle and entreprise_correspond(nom_entreprise, entreprise_reelle):
         return True, "Oui - entreprise confirmee dans le titre du profil"
 
-    if entreprise_dans_body(body, nom_entreprise):
+    # 6. Repli : mention de l'entreprise dans la description
         return True, "Oui (probable) - entreprise mentionnee dans la description"
 
     return False, "Non confirme - entreprise non retrouvee"
