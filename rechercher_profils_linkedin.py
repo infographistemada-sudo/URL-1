@@ -23,7 +23,42 @@ POSTES_CIBLES = [
     "Directeur d'établissement",
     "Manager d'établissement",
     "Directeur équipements",
-    "Responsable équipements"
+    "Responsable équipements",
+    "Dirigeant",
+    "Directeur général",
+    "Gérant",
+    "Président",
+    "Fondateur",
+    "Responsable Spa",
+    "Spa Manager",
+    "Directeur Spa",
+    "Responsable Thalasso",
+    "Directeur Thalasso",
+    "Responsable Wellness",
+    "Responsable Bien-être",
+    "Responsable Balnéo",
+]
+
+# Mots-clés servant à repérer, dans l'intitulé RÉEL trouvé (pas le poste recherché), si la
+# personne occupe un poste de dirigeant / haute responsabilité — quel que soit le poste qui
+# a permis de la trouver au départ.
+MOTS_CLES_DIRIGEANT = [
+    "directeur general", "directrice generale", "dirigeant", "dirigeante",
+    "gerant", "gerante", "president", "presidente", "pdg", "ceo", "dg",
+    "fondateur", "fondatrice", "cofondateur", "cofondatrice", "co fondateur",
+    "co fondatrice", "proprietaire", "responsable general", "responsable generale",
+    "directeur des operations", "directrice des operations", "chief executive",
+    "managing director", "general manager", "directeur d etablissement",
+    "directrice d etablissement", "directeur de l etablissement",
+]
+
+# Mots-clés servant à repérer, dans l'intitulé RÉEL trouvé, un poste lié aux équipements
+# bien-être (spa, thalasso, wellness, balnéo, thermes...), quel que soit le poste recherché
+# qui a permis de trouver la personne.
+MOTS_CLES_EQUIPEMENTS_BIEN_ETRE = [
+    "spa", "thalasso", "thalassotherapie", "wellness", "bien etre", "balneo",
+    "balneotherapie", "thermal", "thermes", "piscine", "fitness", "massage",
+    "esthetique", "estheticien", "hammam", "sauna", "beaute",
 ]
 
 # Nombre d'entreprises traitées par exécution (utile pour GitHub Actions,
@@ -184,6 +219,28 @@ def extraire_titre_complet(title):
     """
     return nettoyer_titre_brut(title)
 
+def est_poste_dirigeant(intitule_reel):
+    """
+    Indique si l'intitulé de poste RÉEL de la personne correspond à un poste de dirigeant
+    ou de haute responsabilité (directeur général, gérant, président, fondateur, etc.),
+    quel que soit le poste qui a permis de la trouver au départ.
+    """
+    if not intitule_reel:
+        return False
+    t = normaliser(intitule_reel)
+    return any(mot in t for mot in MOTS_CLES_DIRIGEANT)
+
+def est_poste_equipements_bien_etre(intitule_reel):
+    """
+    Indique si l'intitulé de poste RÉEL de la personne est lié aux équipements bien-être
+    (spa, thalasso, wellness, balnéo, thermes...), quel que soit le poste qui a permis de
+    la trouver au départ.
+    """
+    if not intitule_reel:
+        return False
+    t = normaliser(intitule_reel)
+    return any(mot in t for mot in MOTS_CLES_EQUIPEMENTS_BIEN_ETRE)
+
 def extraire_periode_emploi(body):
     """
     Cherche dans la description (body) du résultat de recherche une période d'emploi
@@ -239,19 +296,26 @@ def entreprise_dans_body(body, nom_entreprise):
 def verifier_emploi_actuel(nom_entreprise, entreprise_reelle, body, periode=""):
     """
     Estime si la personne travaille ENCORE aujourd'hui dans l'entreprise recherchée.
-    Se base sur les données publiques indexées (titre + description du résultat) :
+    Se base sur les données publiques indexées (titre du résultat de recherche) :
     ce n'est PAS une vérification en temps réel du profil LinkedIn (nécessiterait
     une connexion authentifiée), mais une estimation à partir de ce qui est indexé.
+
+    IMPORTANT (mode strict) : seule une confirmation par le TITRE du profil compte comme
+    preuve valable. La simple mention du nom de l'entreprise dans la description du
+    résultat n'est PAS utilisée comme preuve : la requête de recherche contient déjà le
+    nom de l'entreprise recherchée, donc DuckDuckGo renvoie presque toujours des extraits
+    qui le mentionnent quelque part, même quand la personne travaille ailleurs. Ce critère
+    ne discriminait donc presque rien et laissait passer beaucoup de faux positifs.
+
     Retourne (bool_emploi_actuel, raison_texte).
     """
     texte_combine_norm = normaliser(f"{entreprise_reelle} {body}")
 
-    # 1. PRIORITAIRE : si le titre indique EXPLICITEMENT une autre entreprise que celle
-    #    recherchée, on rejette tout de suite. Sans cette priorité, une période "en cours"
-    #    détectée pouvait valider à tort un profil dont le titre indique pourtant une
-    #    entreprise différente (ex. période "en cours" chez une autre société).
-    if entreprise_reelle and not entreprise_correspond(nom_entreprise, entreprise_reelle):
-        return False, f"Non - entreprise differente indiquee dans le titre : {entreprise_reelle}"
+    # 1. Le titre doit confirmer l'entreprise recherchée : c'est la SEULE preuve valable.
+    if not entreprise_reelle or not entreprise_correspond(nom_entreprise, entreprise_reelle):
+        if entreprise_reelle:
+            return False, f"Non - entreprise differente indiquee dans le titre : {entreprise_reelle}"
+        return False, "Non confirme - entreprise non indiquee dans le titre du profil"
 
     # 2. Période détectée avec une date de fin explicite (pas "aujourd'hui"/"present")
     #    = signal fort que le poste est terminé.
@@ -264,27 +328,13 @@ def verifier_emploi_actuel(nom_entreprise, entreprise_reelle, body, periode=""):
     if any(mot in texte_combine_norm for mot in INDICES_ANCIEN_POSTE):
         return False, "Non - indice d'ancien poste detecte"
 
-    # 4. Corroboration : il faut que l'entreprise recherchée soit confirmée soit par le
-    #    titre, soit par la description. Sans cette étape, une période "aujourd'hui"
-    #    trouvée dans le texte pouvait valider le profil même si cette période concernait
-    #    en réalité une AUTRE entreprise mentionnée par ailleurs dans le texte.
-    entreprise_confirmee_titre = bool(entreprise_reelle) and entreprise_correspond(nom_entreprise, entreprise_reelle)
-    entreprise_confirmee_body = entreprise_dans_body(body, nom_entreprise)
-
-    if not entreprise_confirmee_titre and not entreprise_confirmee_body:
-        return False, "Non confirme - entreprise non retrouvee"
-
-    # 5. Période confirmée "en cours", avec l'entreprise corroborée par ailleurs
+    # 4. Entreprise confirmée par le titre, éventuellement renforcée par une période en cours
     if periode:
         periode_norm = normaliser(periode)
         if any(mot in periode_norm for mot in ["aujourd", "present"]):
-            source = "titre" if entreprise_confirmee_titre else "description"
-            return True, f"Oui - periode en cours detectee ({source}) : {periode}"
+            return True, f"Oui - entreprise et periode en cours confirmees dans le titre : {periode}"
 
-    if entreprise_confirmee_titre:
-        return True, "Oui - entreprise confirmee dans le titre du profil"
-
-    return True, "Oui (probable) - entreprise mentionnee dans la description"
+    return True, "Oui - entreprise confirmee dans le titre du profil"
 
 def marquer_traite(colonne_url, url_traitee, statut, enc, sep):
     """
@@ -423,6 +473,8 @@ def main():
                 titre_complet = extraire_titre_complet(res["title"])
                 entreprise_reelle = extraire_entreprise_reelle(res["title"])
                 periode = extraire_periode_emploi(res.get("body", ""))
+                niveau_poste = "Dirigeant / Haute responsabilite" if est_poste_dirigeant(intitule_reel) else "Autre"
+                domaine_equipements = "Spa / Thalasso / Wellness" if est_poste_equipements_bien_etre(intitule_reel) else ""
                 emploi_actuel, raison = verifier_emploi_actuel(
                     nom_entreprise, entreprise_reelle, res.get("body", ""), periode
                 )
@@ -434,7 +486,8 @@ def main():
                     continue
 
                 profils_trouves.append(
-                    (nom_prenom, profil_url, poste, intitule_reel, titre_complet, entreprise_reelle, periode, raison)
+                    (nom_prenom, profil_url, poste, intitule_reel, titre_complet,
+                     entreprise_reelle, periode, niveau_poste, domaine_equipements, raison)
                 )
 
         # 4. Préparation de la ligne finale
@@ -445,12 +498,14 @@ def main():
         }
 
         # Alignement en colonnes (Collaborateur 1, Collaborateur 2...)
-        for idx, (nom_prenom, p_url, poste, intitule_reel, titre_complet, entreprise_reelle, periode, raison) in enumerate(profils_trouves, 1):
+        for idx, (nom_prenom, p_url, poste, intitule_reel, titre_complet, entreprise_reelle, periode, niveau_poste, domaine_equipements, raison) in enumerate(profils_trouves, 1):
             row_data[f"Poste Recherche {idx}"] = poste
             row_data[f"Intitule Reel {idx}"] = intitule_reel
             row_data[f"Titre Complet {idx}"] = titre_complet
             row_data[f"Entreprise Actuelle {idx}"] = entreprise_reelle or nom_entreprise
             row_data[f"Periode Detectee {idx}"] = periode
+            row_data[f"Niveau Poste {idx}"] = niveau_poste
+            row_data[f"Domaine Equipements {idx}"] = domaine_equipements
             row_data[f"Collaborateur {idx}"] = nom_prenom
             row_data[f"Lien LinkedIn {idx}"] = p_url
             row_data[f"Verification Emploi {idx}"] = raison
