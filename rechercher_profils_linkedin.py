@@ -34,6 +34,17 @@ BATCH_SIZE = int(os.environ.get("BATCH_SIZE", "0") or "0")
 # Mots indiquant que le poste n'est probablement plus d'actualité
 INDICES_ANCIEN_POSTE = ["ancien", "ex-", "ex ", "former", "etait", "a quitte", "ancienne"]
 
+# Pour détecter une période d'emploi du type "sept. 2025 - aujourd'hui · 1 an 1 mois"
+# dans la description (body) du résultat de recherche.
+MOIS_ABREV = r"(?:janv|f[ée]vr|mars|avr|mai|juin|juil|ao[ûu]t|sept|oct|nov|d[ée]c)\.?"
+PATTERN_PERIODE = re.compile(
+    rf"({MOIS_ABREV}\.?\s*\d{{4}}|\d{{4}})\s*[-–—]\s*"
+    rf"({MOIS_ABREV}\.?\s*\d{{4}}|\d{{4}}|aujourd'?hui|present|présent)"
+    r"(\s*[·•]\s*\d+\s*an[s]?(?:\s*\d+\s*mois)?|\s*[·•]\s*\d+\s*mois)?",
+    re.IGNORECASE
+)
+MOTS_PERIODE_EN_COURS = ["aujourd'hui", "aujourdhui", "present", "présent"]
+
 WRITE_LOCK = threading.Lock()
 
 # ==========================================
@@ -49,16 +60,25 @@ def read_table_with_format(path):
     qu'une colonne entièrement vide (ex. "Traite" avant tout traitement) soit interprétée
     par pandas comme un type numérique (float/NaN), ce qui provoquerait une erreur
     ("Invalid value 'Oui' for dtype 'float64'") dès qu'on y écrit du texte ensuite.
+
+    On teste TOUTES les combinaisons encodage/séparateur et on garde celle qui donne
+    le PLUS de colonnes (et non la première qui "réussit" techniquement) : un séparateur
+    incorrect réussit souvent à lire le fichier mais en 1 seule colonne fourre-tout,
+    ce qui corrompait silencieusement le fichier de sortie lors des ré-écritures.
     """
     trials = [("utf-8", ","), ("utf-8", ";"), ("utf-8", "\t"), ("utf-8-sig", ","), ("utf-8-sig", ";"),
               ("utf-8-sig", "\t"), ("cp1252", ","), ("cp1252", ";"), ("cp1252", "\t")]
+    meilleur = None
     for enc, sep in trials:
         try:
             df = pd.read_csv(path, encoding=enc, sep=sep, dtype=str, keep_default_na=False)
             if len(df.columns) >= 1:
-                return df, enc, sep
+                if meilleur is None or len(df.columns) > len(meilleur[0].columns):
+                    meilleur = (df, enc, sep)
         except Exception:
             pass
+    if meilleur is not None:
+        return meilleur
     raise ValueError(f"Impossible de lire le fichier : {path}")
 
 def read_table(path):
@@ -86,15 +106,44 @@ def normaliser(texte):
     texte = re.sub(r'\s+', ' ', texte).strip()
     return texte
 
+def nettoyer_titre_brut(title):
+    """
+    Nettoie un titre de résultat de recherche pour ne garder que la partie utile
+    (avant toute mention de "LinkedIn"), et retire les résidus de tiret/pipe en fin
+    de chaîne.
+
+    Corrige un problème observé : DuckDuckGo renvoie parfois un titre "pollué" qui
+    concatène plusieurs résultats à la suite, ex. :
+      "Anthony BOISNARD - Adjoint de Direction ... - LinkedInEmma PECOUT - Spa Manager ..."
+    Le mot "LinkedIn" (avec ou sans espace/pipe avant) marque quasi toujours la fin du
+    titre utile et le début soit du suffixe de site, soit de la pollution suivante.
+    On coupe donc à la première occurrence de "linkedin", peu importe ce qui la précède.
+    """
+    if not title:
+        return ""
+    t = str(title)
+    idx = t.lower().find("linkedin")
+    if idx != -1:
+        t = t[:idx]
+    t = re.sub(r'[\s\-|]+$', '', t).strip()
+    return t
+
+def _segments_titre(title):
+    """
+    Découpe un titre nettoyé en segments "Nom - Poste - Entreprise".
+    IMPORTANT : on ne coupe que sur un tiret ENTOURÉ D'ESPACES (" - "), jamais sur un
+    tiret collé à des lettres. Sinon des mots/noms composés comme "Haut-Bugey" ou
+    "Sous-directeur" étaient cassés en deux morceaux à tort.
+    """
+    t = nettoyer_titre_brut(title)
+    if not t:
+        return []
+    return [p.strip() for p in re.split(r'\s+-\s+', t) if p.strip()]
+
 def clean_profile_title(title):
     """Nettoie le titre pour isoler au mieux le Prénom Nom."""
-    if not title:
-        return "Inconnu"
-    title = re.sub(r'\s*\|\s*LinkedIn.*', '', title, flags=re.IGNORECASE)
-    parts = title.split('-')
-    if parts:
-        return parts[0].strip()
-    return title.strip()
+    parts = _segments_titre(title)
+    return parts[0] if parts else "Inconnu"
 
 def extraire_intitule_reel(title):
     """
@@ -102,30 +151,42 @@ def extraire_intitule_reel(title):
     de recherche (et non le poste recherché par la requête).
 
     Format typique LinkedIn :
-      "Prénom Nom - Intitulé de poste - Entreprise | LinkedIn"
-    Le 2e segment (après le 1er tiret) correspond à l'intitulé réel du poste.
+      "Prénom Nom - Intitulé de poste - Entreprise"
+    Le 2e segment correspond à l'intitulé réel du poste.
     """
-    if not title:
-        return ""
-    t = re.sub(r'\s*\|\s*LinkedIn.*', '', title, flags=re.IGNORECASE)
-    parts = [p.strip() for p in t.split('-') if p.strip()]
-    if len(parts) >= 2:
-        return parts[1]
-    return ""
+    parts = _segments_titre(title)
+    return parts[1] if len(parts) >= 2 else ""
 
 def extraire_entreprise_reelle(title):
     """
     Extrait le nom de l'ENTREPRISE réelle où travaille la personne, à partir du titre
     du résultat de recherche (3e segment, quand présent) :
-      "Prénom Nom - Intitulé de poste - Entreprise | LinkedIn"
+      "Prénom Nom - Intitulé de poste - Entreprise"
     """
-    if not title:
-        return ""
-    t = re.sub(r'\s*\|\s*LinkedIn.*', '', title, flags=re.IGNORECASE)
-    parts = [p.strip() for p in t.split('-') if p.strip()]
+    parts = _segments_titre(title)
     if len(parts) >= 3:
-        # Au cas où le nom d'entreprise contienne lui-même un tiret, on recolle le reste
-        return '-'.join(parts[2:]).strip()
+        return ' - '.join(parts[2:]).strip()
+    return ""
+
+def extraire_titre_complet(title):
+    """
+    Renvoie le titre COMPLET et brut du résultat de recherche pour la personne
+    (nettoyé de la mention "LinkedIn" et de tout ce qui suit), sans le découper en segments.
+    """
+    return nettoyer_titre_brut(title)
+
+def extraire_periode_emploi(body):
+    """
+    Cherche dans la description (body) du résultat de recherche une période d'emploi
+    au format LinkedIn, ex: "sept. 2025 - aujourd'hui · 1 an 1 mois".
+    Renvoie la période brute trouvée, ou une chaîne vide si le snippet n'en contient pas
+    (ce n'est pas systématique : dépend de ce que DuckDuckGo a indexé).
+    """
+    if not body:
+        return ""
+    match = PATTERN_PERIODE.search(body)
+    if match:
+        return match.group(0).strip()
     return ""
 
 def entreprise_correspond(entreprise_cible, entreprise_extraite):
@@ -155,7 +216,7 @@ def entreprise_dans_body(body, nom_entreprise):
         return cible_norm in body_norm
     return any(m in body_norm for m in mots_cible)
 
-def verifier_emploi_actuel(nom_entreprise, entreprise_reelle, body):
+def verifier_emploi_actuel(nom_entreprise, entreprise_reelle, body, periode=""):
     """
     Estime si la personne travaille ENCORE aujourd'hui dans l'entreprise recherchée.
     Se base sur les données publiques indexées (titre + description du résultat) :
@@ -165,8 +226,22 @@ def verifier_emploi_actuel(nom_entreprise, entreprise_reelle, body):
     """
     texte_combine_norm = normaliser(f"{entreprise_reelle} {body}")
 
+    # Une période détectée avec une date de fin explicite (pas "aujourd'hui"/"present")
+    # est un signal fort que le poste est terminé.
+    if periode:
+        periode_norm = normaliser(periode)
+        if not any(mot in periode_norm for mot in ["aujourd", "present"]):
+            return False, f"Non - periode terminee detectee : {periode}"
+
     if any(mot in texte_combine_norm for mot in INDICES_ANCIEN_POSTE):
         return False, "Non - indice d'ancien poste detecte"
+
+    # Une période détectée se terminant "aujourd'hui"/"present" est une confirmation forte,
+    # même si l'entreprise n'a pas pu être confirmée autrement.
+    if periode:
+        periode_norm = normaliser(periode)
+        if any(mot in periode_norm for mot in ["aujourd", "present"]):
+            return True, f"Oui - periode en cours detectee : {periode}"
 
     if entreprise_reelle and entreprise_correspond(nom_entreprise, entreprise_reelle):
         return True, "Oui - entreprise confirmee dans le titre du profil"
@@ -310,8 +385,12 @@ def main():
 
                 nom_prenom = clean_profile_title(res["title"])
                 intitule_reel = extraire_intitule_reel(res["title"])
+                titre_complet = extraire_titre_complet(res["title"])
                 entreprise_reelle = extraire_entreprise_reelle(res["title"])
-                emploi_actuel, raison = verifier_emploi_actuel(nom_entreprise, entreprise_reelle, res.get("body", ""))
+                periode = extraire_periode_emploi(res.get("body", ""))
+                emploi_actuel, raison = verifier_emploi_actuel(
+                    nom_entreprise, entreprise_reelle, res.get("body", ""), periode
+                )
 
                 # On ne garde QUE les profils dont on estime qu'ils travaillent
                 # ENCORE aujourd'hui dans l'entreprise recherchée.
@@ -319,7 +398,9 @@ def main():
                     profils_ecartes += 1
                     continue
 
-                profils_trouves.append((nom_prenom, profil_url, poste, intitule_reel, entreprise_reelle, raison))
+                profils_trouves.append(
+                    (nom_prenom, profil_url, poste, intitule_reel, titre_complet, entreprise_reelle, periode, raison)
+                )
 
         # 4. Préparation de la ligne finale
         row_data = {
@@ -329,10 +410,12 @@ def main():
         }
 
         # Alignement en colonnes (Collaborateur 1, Collaborateur 2...)
-        for idx, (nom_prenom, p_url, poste, intitule_reel, entreprise_reelle, raison) in enumerate(profils_trouves, 1):
+        for idx, (nom_prenom, p_url, poste, intitule_reel, titre_complet, entreprise_reelle, periode, raison) in enumerate(profils_trouves, 1):
             row_data[f"Poste Recherche {idx}"] = poste
             row_data[f"Intitule Reel {idx}"] = intitule_reel
+            row_data[f"Titre Complet {idx}"] = titre_complet
             row_data[f"Entreprise Actuelle {idx}"] = entreprise_reelle or nom_entreprise
+            row_data[f"Periode Detectee {idx}"] = periode
             row_data[f"Collaborateur {idx}"] = nom_prenom
             row_data[f"Lien LinkedIn {idx}"] = p_url
             row_data[f"Verification Emploi {idx}"] = raison

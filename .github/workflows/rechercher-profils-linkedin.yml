@@ -11,6 +11,12 @@ concurrency:
   group: recherche-profils-linkedin
   cancel-in-progress: false
 
+# Nécessaire pour que le job puisse commit/push (contents) et relancer
+# le workflow lui-même via "gh workflow run" (actions).
+permissions:
+  contents: write
+  actions: write
+
 jobs:
   run-batch:
     runs-on: ubuntu-latest
