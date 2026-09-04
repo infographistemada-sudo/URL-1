@@ -45,6 +45,15 @@ PATTERN_PERIODE = re.compile(
 )
 MOTS_PERIODE_EN_COURS = ["aujourd'hui", "aujourdhui", "present", "présent"]
 
+# Mots trop génériques dans le secteur hôtellerie/spa/tourisme pour servir, à eux seuls,
+# de preuve de correspondance entre deux noms d'entreprise (ex. "spa" ou "domaine" se
+# retrouvent dans des dizaines d'établissements différents).
+MOTS_GENERIQUES_ENTREPRISE = {
+    "hotel", "hôtel", "spa", "domaine", "groupe", "group", "resort", "resorts",
+    "thermes", "thermal", "thermale", "thermes", "wellness", "tourisme", "tourism",
+    "office", "france", "com", "sarl", "sas", "château", "chateau", "restaurant",
+}
+
 WRITE_LOCK = threading.Lock()
 
 # ==========================================
@@ -199,9 +208,20 @@ def entreprise_correspond(entreprise_cible, entreprise_extraite):
         return False
     if cible_norm in extraite_norm or extraite_norm in cible_norm:
         return True
-    mots_cible = {m for m in cible_norm.split() if len(m) >= 4}
-    mots_extraite = {m for m in extraite_norm.split() if len(m) >= 4}
-    return bool(mots_cible & mots_extraite)
+
+    mots_cible = {m for m in cible_norm.split() if len(m) >= 4 and m not in MOTS_GENERIQUES_ENTREPRISE}
+    mots_extraite = {m for m in extraite_norm.split() if len(m) >= 4 and m not in MOTS_GENERIQUES_ENTREPRISE}
+    if not mots_cible or not mots_extraite:
+        return False
+
+    # On exige que TOUS les mots significatifs du plus petit ensemble se retrouvent dans
+    # l'autre (et pas un simple mot en commun, trop permissif : "univers" seul ne doit pas
+    # suffire à faire correspondre "Univers Wellness" et "L'Univers Informatique", deux
+    # entreprises différentes).
+    plus_petit, plus_grand = (
+        (mots_cible, mots_extraite) if len(mots_cible) <= len(mots_extraite) else (mots_extraite, mots_cible)
+    )
+    return plus_petit.issubset(plus_grand)
 
 def entreprise_dans_body(body, nom_entreprise):
     """Vérifie si le nom de l'entreprise recherchée apparaît dans la description du résultat."""
@@ -244,21 +264,27 @@ def verifier_emploi_actuel(nom_entreprise, entreprise_reelle, body, periode=""):
     if any(mot in texte_combine_norm for mot in INDICES_ANCIEN_POSTE):
         return False, "Non - indice d'ancien poste detecte"
 
-    # 4. Période confirmée "en cours" (et on sait déjà, grâce à l'étape 1, qu'elle ne
-    #    contredit pas une autre entreprise indiquée dans le titre)
+    # 4. Corroboration : il faut que l'entreprise recherchée soit confirmée soit par le
+    #    titre, soit par la description. Sans cette étape, une période "aujourd'hui"
+    #    trouvée dans le texte pouvait valider le profil même si cette période concernait
+    #    en réalité une AUTRE entreprise mentionnée par ailleurs dans le texte.
+    entreprise_confirmee_titre = bool(entreprise_reelle) and entreprise_correspond(nom_entreprise, entreprise_reelle)
+    entreprise_confirmee_body = entreprise_dans_body(body, nom_entreprise)
+
+    if not entreprise_confirmee_titre and not entreprise_confirmee_body:
+        return False, "Non confirme - entreprise non retrouvee"
+
+    # 5. Période confirmée "en cours", avec l'entreprise corroborée par ailleurs
     if periode:
         periode_norm = normaliser(periode)
         if any(mot in periode_norm for mot in ["aujourd", "present"]):
-            return True, f"Oui - periode en cours detectee : {periode}"
+            source = "titre" if entreprise_confirmee_titre else "description"
+            return True, f"Oui - periode en cours detectee ({source}) : {periode}"
 
-    # 5. Entreprise confirmée dans le titre
-    if entreprise_reelle and entreprise_correspond(nom_entreprise, entreprise_reelle):
+    if entreprise_confirmee_titre:
         return True, "Oui - entreprise confirmee dans le titre du profil"
 
-    # 6. Repli : mention de l'entreprise dans la description
-        return True, "Oui (probable) - entreprise mentionnee dans la description"
-
-    return False, "Non confirme - entreprise non retrouvee"
+    return True, "Oui (probable) - entreprise mentionnee dans la description"
 
 def marquer_traite(colonne_url, url_traitee, statut, enc, sep):
     """
