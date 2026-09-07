@@ -423,15 +423,19 @@ def extraire_site_depuis_texte_linkedin(texte):
         return m.group(1).rstrip('.,;)')
     return ""
 
-def rechercher_site_web_depuis_page_linkedin(url_linkedin, max_retries=3):
+def rechercher_site_web_depuis_page_linkedin(url_linkedin, max_retries=2):
     """
     Cherche le site web officiel directement depuis le champ "Website" affiché sur
     la page LinkedIn de l'entreprise elle-même (visible dans l'extrait indexé par le
     moteur de recherche pour cette URL précise) — plus fiable qu'une recherche
     générique par nom, puisque l'info vient de LinkedIn.
+
+    Renvoie (site_web, echec_reseau) — echec_reseau est True uniquement si TOUTES
+    les tentatives ont échoué sans la moindre réponse du moteur de recherche
+    (signe probable d'un blocage réseau, pas juste "site non trouvé").
     """
     if not url_linkedin:
-        return ""
+        return "", False
     query = f'"{url_linkedin}"'
     for attempt in range(1, max_retries + 1):
         try:
@@ -442,22 +446,22 @@ def rechercher_site_web_depuis_page_linkedin(url_linkedin, max_retries=3):
                 texte = f"{item.get('title', '')} {item.get('body', '')}"
                 site = extraire_site_depuis_texte_linkedin(texte)
                 if site:
-                    return site
-            return ""
+                    return site, False
+            return "", False
         except Exception as e:
             print(f"    ⚠️ Erreur DDG page LinkedIn (tentative {attempt}/{max_retries}) : {e}")
             time.sleep(attempt * random.uniform(2.0, 4.0))
-    return ""
+    return "", True
 
-def rechercher_site_web(nom_entreprise, url_linkedin="", max_retries=3):
+def rechercher_site_web(nom_entreprise, url_linkedin="", max_retries=2):
     """
     Cherche le site officiel de l'entreprise : en priorité depuis le champ "Website"
     de sa propre page LinkedIn, puis par recherche générique par nom en repli si
-    la page LinkedIn n'a rien donné.
+    la page LinkedIn n'a rien donné. Renvoie (site_web, echec_reseau).
     """
-    site = rechercher_site_web_depuis_page_linkedin(url_linkedin, max_retries=max_retries)
+    site, echec = rechercher_site_web_depuis_page_linkedin(url_linkedin, max_retries=max_retries)
     if site:
-        return site
+        return site, False
 
     # Repli : recherche générique par nom d'entreprise
     query = f"{nom_entreprise} site officiel"
@@ -466,17 +470,18 @@ def rechercher_site_web(nom_entreprise, url_linkedin="", max_retries=3):
             for item in ddgs_text_avec_timeout(query, region="fr-fr", max_results=5):
                 url = item.get("href", "")
                 if domaine_valide_pour_site(url):
-                    return url
-            return ""
+                    return url, False
+            return "", False
         except Exception as e:
             print(f"    ⚠️ Erreur DDG site web (tentative {attempt}/{max_retries}) : {e}")
             time.sleep(attempt * random.uniform(2.0, 4.0))
-    return ""
+    return "", True
 
-def rechercher_adresse_telephone(nom_entreprise, max_retries=3):
+def rechercher_adresse_telephone(nom_entreprise, max_retries=2):
     """Cherche l'adresse et le téléphone de l'entreprise dans les extraits de recherche
     (utilisé seulement pour ce qui est absent du fichier). Best-effort : dépend de ce
-    que DuckDuckGo a indexé, à vérifier manuellement en cas de doute."""
+    que DuckDuckGo a indexé, à vérifier manuellement en cas de doute.
+    Renvoie (adresse, telephone, echec_reseau)."""
     query = f"{nom_entreprise} adresse telephone"
     adresse, telephone = "", ""
     for attempt in range(1, max_retries + 1):
@@ -493,33 +498,58 @@ def rechercher_adresse_telephone(nom_entreprise, max_retries=3):
                         adresse = re.sub(r'\s+', ' ', m2.group(0)).strip()
                 if adresse and telephone:
                     break
-            return adresse, telephone
+            return adresse, telephone, False
         except Exception as e:
             print(f"    ⚠️ Erreur DDG adresse/tel (tentative {attempt}/{max_retries}) : {e}")
             time.sleep(attempt * random.uniform(2.0, 4.0))
-    return adresse, telephone
+    return adresse, telephone, True
+
+# Coupe-circuit : si DuckDuckGo bloque systématiquement les recherches secondaires
+# (site web / adresse / téléphone) sur plusieurs entreprises d'affilée, on les
+# désactive pour le reste du lot, afin de ne pas perdre de temps dessus. La
+# recherche de profils LinkedIn (l'essentiel du script) n'est jamais désactivée.
+ETAT_RECHERCHES_SECONDAIRES = {"actives": True, "echecs_consecutifs": 0}
+SEUIL_DESACTIVATION = 2
 
 def obtenir_infos_entreprise(nom_entreprise, url_linkedin="", site_existant="", adresse_existante="", telephone_existant=""):
     """
     Renvoie (site_web, adresse, telephone) pour l'entreprise : reprend telles quelles
     les valeurs déjà présentes dans le fichier d'entrée, et ne lance une recherche
-    QUE pour les informations manquantes.
+    QUE pour les informations manquantes — sauf si le coupe-circuit a désactivé les
+    recherches secondaires suite à des échecs réseau répétés.
     """
     site_web = (site_existant or "").strip()
     adresse = (adresse_existante or "").strip()
     telephone = (telephone_existant or "").strip()
 
+    if (site_web and adresse and telephone) or not ETAT_RECHERCHES_SECONDAIRES["actives"]:
+        return site_web, adresse, telephone
+
+    echecs = []
+
     if not site_web:
         time.sleep(random.uniform(2.0, 4.0))
-        site_web = rechercher_site_web(nom_entreprise, url_linkedin)
+        site_web, echec_site = rechercher_site_web(nom_entreprise, url_linkedin)
+        echecs.append(echec_site)
 
     if not adresse or not telephone:
         time.sleep(random.uniform(2.0, 4.0))
-        adresse_trouvee, telephone_trouve = rechercher_adresse_telephone(nom_entreprise)
+        adresse_trouvee, telephone_trouve, echec_contact = rechercher_adresse_telephone(nom_entreprise)
         if not adresse:
             adresse = adresse_trouvee
         if not telephone:
             telephone = telephone_trouve
+        echecs.append(echec_contact)
+
+    if echecs and all(echecs):
+        ETAT_RECHERCHES_SECONDAIRES["echecs_consecutifs"] += 1
+        if ETAT_RECHERCHES_SECONDAIRES["echecs_consecutifs"] >= SEUIL_DESACTIVATION:
+            ETAT_RECHERCHES_SECONDAIRES["actives"] = False
+            print("⚠️ DuckDuckGo semble bloquer les recherches (site web/adresse/téléphone) "
+                  "depuis cette machine : ces recherches sont désactivées pour le reste du lot "
+                  "afin de ne pas perdre de temps. La recherche de profils LinkedIn continue normalement.")
+    elif echecs:
+        ETAT_RECHERCHES_SECONDAIRES["echecs_consecutifs"] = 0
 
     return site_web, adresse, telephone
 
