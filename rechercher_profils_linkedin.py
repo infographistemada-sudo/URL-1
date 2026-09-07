@@ -1,13 +1,23 @@
 # -*- coding: utf-8 -*-
 import os
 import re
+import sys
 import time
 import random
-import signal
 import threading
 import unicodedata
+import multiprocessing as mp
 from urllib.parse import urlparse
 import pandas as pd
+
+# Sortie non bufferisée : sans ça, les print() peuvent rester invisibles dans les
+# logs GitHub Actions pendant un long moment (la sortie n'est pas un terminal),
+# donnant l'impression à tort que le script est bloqué alors qu'il avance.
+try:
+    sys.stdout.reconfigure(line_buffering=True)
+    sys.stderr.reconfigure(line_buffering=True)
+except Exception:
+    pass
 
 # Import natif basé sur votre exemple de script
 try:
@@ -21,25 +31,55 @@ class RechercheDDGSExpiree(Exception):
     GitHub Actions, ne renvoyer aucune réponse ni erreur et bloquer indéfiniment."""
     pass
 
-def _lever_timeout(signum, frame):
-    raise RechercheDDGSExpiree("Délai dépassé en attendant la réponse de DuckDuckGo.")
+def _worker_ddgs(query, kwargs, resultat_queue):
+    """Exécuté dans un processus séparé (voir ddgs_text_avec_timeout)."""
+    try:
+        with DDGS() as ddgs:
+            resultats = list(ddgs.text(query, **kwargs))
+        resultat_queue.put(("ok", resultats))
+    except Exception as e:
+        resultat_queue.put(("erreur", str(e)))
 
 def ddgs_text_avec_timeout(query, timeout=20, **kwargs):
     """
-    Exécute une recherche DDGS avec une limite de temps stricte, pour éviter un
-    blocage indéfini du script si DuckDuckGo ne répond plus (fréquent sur les IPs
-    partagées de GitHub Actions). Renvoie la liste des résultats, ou lève
-    RechercheDDGSExpiree / toute autre exception réseau au bout de `timeout`
-    secondes, ce que la logique de retry existante peut alors gérer normalement.
+    Exécute une recherche DDGS dans un PROCESSUS séparé, avec une limite de temps
+    stricte. Si le processus ne répond pas à temps, il est tué de force
+    (Process.terminate) — contrairement à un simple timeout par signal, ceci
+    fonctionne même si l'appel réseau est bloqué dans du code natif (le client
+    HTTP de la librairie ddgs est écrit en Rust) qui ignore les signaux Python.
+
+    Par défaut, restreint les moteurs interrogés à une liste fiable/joignable
+    depuis les runners GitHub Actions : le mode "auto" de ddgs essaie Wikipedia et
+    Grokipedia en premier (hors-sujet ici, et Grokipedia est injoignable en
+    pratique : "Network is unreachable"), puis Google, lui aussi injoignable
+    depuis ces IPs. On évite ce gaspillage de temps en ciblant directement les
+    moteurs qui répondent réellement.
     """
-    ancien_handler = signal.signal(signal.SIGALRM, _lever_timeout)
-    signal.alarm(timeout)
-    try:
-        with DDGS() as ddgs:
-            return list(ddgs.text(query, **kwargs))
-    finally:
-        signal.alarm(0)
-        signal.signal(signal.SIGALRM, ancien_handler)
+    kwargs.setdefault("backend", "duckduckgo,bing,brave,mojeek,startpage,yahoo")
+    resultat_queue = mp.Queue()
+    processus = mp.Process(target=_worker_ddgs, args=(query, kwargs, resultat_queue))
+    processus.daemon = True
+    processus.start()
+    processus.join(timeout)
+
+    if processus.is_alive():
+        processus.terminate()
+        processus.join(5)
+        if processus.is_alive():
+            processus.kill()
+            processus.join()
+        raise RechercheDDGSExpiree(
+            f"Délai de {timeout}s dépassé en attendant la réponse de DuckDuckGo "
+            f"(processus de recherche arrêté de force)."
+        )
+
+    if resultat_queue.empty():
+        raise RechercheDDGSExpiree("Le processus de recherche s'est arrêté sans renvoyer de résultat.")
+
+    statut, valeur = resultat_queue.get()
+    if statut == "erreur":
+        raise Exception(valeur)
+    return valeur
 
 # ==========================================
 # CONFIGURATION
@@ -528,12 +568,12 @@ def obtenir_infos_entreprise(nom_entreprise, url_linkedin="", site_existant="", 
     echecs = []
 
     if not site_web:
-        time.sleep(random.uniform(2.0, 4.0))
+        time.sleep(random.uniform(3.0, 6.0))
         site_web, echec_site = rechercher_site_web(nom_entreprise, url_linkedin)
         echecs.append(echec_site)
 
     if not adresse or not telephone:
-        time.sleep(random.uniform(2.0, 4.0))
+        time.sleep(random.uniform(3.0, 6.0))
         adresse_trouvee, telephone_trouve, echec_contact = rechercher_adresse_telephone(nom_entreprise)
         if not adresse:
             adresse = adresse_trouvee
@@ -712,7 +752,7 @@ def main():
         # Itération sur chaque poste
         for poste in POSTES_CIBLES:
             # Temporisation pour ne pas surcharger DuckDuckGo (comme dans votre exemple)
-            time.sleep(random.uniform(2.0, 4.0))
+            time.sleep(random.uniform(3.0, 6.0))
 
             resultats_recherche = search_duckduckgo_direct(nom_entreprise, poste)
 
