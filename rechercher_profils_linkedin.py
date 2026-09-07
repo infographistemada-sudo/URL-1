@@ -657,7 +657,7 @@ def search_duckduckgo_direct(nom_entreprise, poste, max_results=5, max_retries=3
 def main():
     if not os.path.exists(FICHIER_ENTREE):
         print(f"❌ Erreur : Le fichier d'entrée '{FICHIER_ENTREE}' est introuvable.")
-        return
+        sys.exit(1)
 
     # 1. Chargement et normalisation des données sources
     df_entree, enc_entree, sep_entree = read_table_with_format(FICHIER_ENTREE)
@@ -745,15 +745,12 @@ def main():
 
         print(f"[{index}/{len(urls_du_lot)}] Recherche directe pour : {nom_entreprise}...")
 
-        # Site web / adresse / téléphone : réutilise ce qui est déjà dans le fichier
-        # d'entrée, complète uniquement ce qui manque par une recherche.
-        site_web, adresse, telephone = obtenir_infos_entreprise(
-            nom_entreprise,
-            url_clean,
-            infos_connues.get("site", ""),
-            infos_connues.get("adresse", ""),
-            infos_connues.get("telephone", ""),
-        )
+        # Site web / adresse / téléphone : recherche désactivée pour accélérer le
+        # traitement. On garde uniquement ce qui est déjà présent dans le fichier
+        # d'entrée (aucun appel réseau supplémentaire ici).
+        site_web = infos_connues.get("site", "")
+        adresse = infos_connues.get("adresse", "")
+        telephone = infos_connues.get("telephone", "")
 
         profils_trouves = []
         profils_ecartes = 0
@@ -866,10 +863,9 @@ def main():
     print(f"\n🎉 Script terminé pour ce lot. Fichier mis à jour : '{FICHIER_SORTIE}'")
     print(f"📊 Il reste {restant_apres_lot} URL(s) à traiter.")
 
-    # Écrit un indicateur simple pour que le workflow GitHub Actions sache
-    # s'il doit se relancer automatiquement.
-    with open("reste_a_traiter.txt", "w", encoding="utf-8") as f:
-        f.write(str(restant_apres_lot))
+    # Code de sortie utilisé par le workflow GitHub Actions pour savoir s'il doit
+    # relancer un lot suivant : 2 = il reste des URLs, 0 = tout est traité.
+    sys.exit(2 if restant_apres_lot > 0 else 0)
 
 if __name__ == "__main__":
     main()
