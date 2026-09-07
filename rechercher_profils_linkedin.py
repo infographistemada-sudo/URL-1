@@ -3,8 +3,10 @@ import os
 import re
 import time
 import random
+import signal
 import threading
 import unicodedata
+from urllib.parse import urlparse
 import pandas as pd
 
 # Import natif basé sur votre exemple de script
@@ -12,6 +14,32 @@ try:
     from ddgs import DDGS
 except ImportError:
     from duckduckgo_search import DDGS
+
+class RechercheDDGSExpiree(Exception):
+    """Levée quand un appel DDGS dépasse la durée maximale autorisée (voir
+    ddgs_text_avec_timeout) — utile car DuckDuckGo peut, sur les IPs partagées de
+    GitHub Actions, ne renvoyer aucune réponse ni erreur et bloquer indéfiniment."""
+    pass
+
+def _lever_timeout(signum, frame):
+    raise RechercheDDGSExpiree("Délai dépassé en attendant la réponse de DuckDuckGo.")
+
+def ddgs_text_avec_timeout(query, timeout=20, **kwargs):
+    """
+    Exécute une recherche DDGS avec une limite de temps stricte, pour éviter un
+    blocage indéfini du script si DuckDuckGo ne répond plus (fréquent sur les IPs
+    partagées de GitHub Actions). Renvoie la liste des résultats, ou lève
+    RechercheDDGSExpiree / toute autre exception réseau au bout de `timeout`
+    secondes, ce que la logique de retry existante peut alors gérer normalement.
+    """
+    ancien_handler = signal.signal(signal.SIGALRM, _lever_timeout)
+    signal.alarm(timeout)
+    try:
+        with DDGS() as ddgs:
+            return list(ddgs.text(query, **kwargs))
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, ancien_handler)
 
 # ==========================================
 # CONFIGURATION
@@ -90,6 +118,34 @@ MOTS_GENERIQUES_ENTREPRISE = {
 }
 
 WRITE_LOCK = threading.Lock()
+
+# Domaines à ignorer quand on cherche le SITE OFFICIEL d'une entreprise (annuaires,
+# réseaux sociaux, plateformes d'avis... ce ne sont jamais le site officiel).
+DOMAINES_EXCLUS_SITE = {
+    "linkedin.com", "facebook.com", "instagram.com", "twitter.com", "x.com",
+    "wikipedia.org", "pagesjaunes.fr", "societe.com", "google.com", "google.fr",
+    "tripadvisor.com", "tripadvisor.fr", "indeed.com", "glassdoor.fr", "glassdoor.com",
+    "viadeo.com", "youtube.com", "pinterest.com", "yelp.com", "yelp.fr",
+}
+
+# Détection d'un numéro de téléphone français dans un extrait de recherche
+# (ex: "01 23 45 67 89", "+33 1 23 45 67 89", "01.23.45.67.89").
+PHONE_REGEX = re.compile(r'(?:\+33[\s.\-]?|0)[1-9](?:[\s.\-]?\d{2}){4}')
+
+# Détection approximative d'une adresse française (numéro + rue + code postal + ville)
+# dans un extrait de recherche. Reste imprécis par nature (dépend de ce que
+# DuckDuckGo a indexé) : à vérifier manuellement en cas de doute.
+ADRESSE_PATTERN = re.compile(
+    r'([0-9]{1,4}[^,\n|]{2,70}?,?\s*\d{5}\s+[A-ZÀ-Ü][A-Za-zÀ-ÿ\'\-\s]{1,40})'
+)
+
+# Mots-clés utilisés pour repérer, dans les en-têtes du fichier d'entrée, des colonnes
+# déjà existantes de site web / adresse / téléphone (pour ne PAS relancer une
+# recherche si l'info est déjà présente).
+MOTS_CLES_COL_SITE = ["site web", "siteweb", "site internet", "website"]
+MOTS_CLES_COL_ADRESSE = ["adresse", "address"]
+MOTS_CLES_COL_TELEPHONE = ["telephone", "tel", "phone"]
+MOTS_CLES_COL_NOM = ["nom entreprise", "nom societe", "raison sociale", "nom company", "societe", "entreprise", "company", "nom"]
 
 # ==========================================
 # FONCTIONS UTILITAIRES (Inspirées de votre exemple)
@@ -336,6 +392,137 @@ def verifier_emploi_actuel(nom_entreprise, entreprise_reelle, body, periode=""):
 
     return True, "Oui - entreprise confirmee dans le titre du profil"
 
+def detecter_colonne(df, mots_cles):
+    """Cherche, parmi les colonnes du DataFrame, une colonne dont le nom (normalisé)
+    contient l'un des mots-clés donnés (comparaison sur mots entiers, pour éviter par
+    exemple qu'un mot-clé "tel" corresponde à tort à une colonne nommée "Hotel")."""
+    for col in df.columns:
+        col_norm = normaliser(col)
+        for mot in mots_cles:
+            if re.search(rf'\b{re.escape(mot)}\b', col_norm):
+                return col
+    return None
+
+def domaine_valide_pour_site(url):
+    """Vérifie que l'URL ne pointe pas vers un annuaire/réseau social (donc probablement
+    le site officiel de l'entreprise)."""
+    try:
+        domaine = urlparse(url).netloc.lower()
+    except Exception:
+        return False
+    if not domaine:
+        return False
+    domaine = domaine[4:] if domaine.startswith("www.") else domaine
+    return not any(exclu in domaine for exclu in DOMAINES_EXCLUS_SITE)
+
+def extraire_site_depuis_texte_linkedin(texte):
+    """Cherche un motif 'Website: <url>' tel qu'affiché dans la section "About us"
+    des pages entreprise LinkedIn, au sein d'un extrait de résultat de recherche."""
+    m = re.search(r'website\s*[:\-]?\s*(https?://[^\s|<>")]+)', texte, re.IGNORECASE)
+    if m:
+        return m.group(1).rstrip('.,;)')
+    return ""
+
+def rechercher_site_web_depuis_page_linkedin(url_linkedin, max_retries=3):
+    """
+    Cherche le site web officiel directement depuis le champ "Website" affiché sur
+    la page LinkedIn de l'entreprise elle-même (visible dans l'extrait indexé par le
+    moteur de recherche pour cette URL précise) — plus fiable qu'une recherche
+    générique par nom, puisque l'info vient de LinkedIn.
+    """
+    if not url_linkedin:
+        return ""
+    query = f'"{url_linkedin}"'
+    for attempt in range(1, max_retries + 1):
+        try:
+            for item in ddgs_text_avec_timeout(query, region="fr-fr", max_results=5):
+                href = item.get("href", "")
+                if "linkedin.com" not in href.lower():
+                    continue
+                texte = f"{item.get('title', '')} {item.get('body', '')}"
+                site = extraire_site_depuis_texte_linkedin(texte)
+                if site:
+                    return site
+            return ""
+        except Exception as e:
+            print(f"    ⚠️ Erreur DDG page LinkedIn (tentative {attempt}/{max_retries}) : {e}")
+            time.sleep(attempt * random.uniform(2.0, 4.0))
+    return ""
+
+def rechercher_site_web(nom_entreprise, url_linkedin="", max_retries=3):
+    """
+    Cherche le site officiel de l'entreprise : en priorité depuis le champ "Website"
+    de sa propre page LinkedIn, puis par recherche générique par nom en repli si
+    la page LinkedIn n'a rien donné.
+    """
+    site = rechercher_site_web_depuis_page_linkedin(url_linkedin, max_retries=max_retries)
+    if site:
+        return site
+
+    # Repli : recherche générique par nom d'entreprise
+    query = f"{nom_entreprise} site officiel"
+    for attempt in range(1, max_retries + 1):
+        try:
+            for item in ddgs_text_avec_timeout(query, region="fr-fr", max_results=5):
+                url = item.get("href", "")
+                if domaine_valide_pour_site(url):
+                    return url
+            return ""
+        except Exception as e:
+            print(f"    ⚠️ Erreur DDG site web (tentative {attempt}/{max_retries}) : {e}")
+            time.sleep(attempt * random.uniform(2.0, 4.0))
+    return ""
+
+def rechercher_adresse_telephone(nom_entreprise, max_retries=3):
+    """Cherche l'adresse et le téléphone de l'entreprise dans les extraits de recherche
+    (utilisé seulement pour ce qui est absent du fichier). Best-effort : dépend de ce
+    que DuckDuckGo a indexé, à vérifier manuellement en cas de doute."""
+    query = f"{nom_entreprise} adresse telephone"
+    adresse, telephone = "", ""
+    for attempt in range(1, max_retries + 1):
+        try:
+            for item in ddgs_text_avec_timeout(query, region="fr-fr", max_results=5):
+                texte = f"{item.get('title', '')} {item.get('body', '')}"
+                if not telephone:
+                    m = PHONE_REGEX.search(texte)
+                    if m:
+                        telephone = m.group(0).strip()
+                if not adresse:
+                    m2 = ADRESSE_PATTERN.search(texte)
+                    if m2:
+                        adresse = re.sub(r'\s+', ' ', m2.group(0)).strip()
+                if adresse and telephone:
+                    break
+            return adresse, telephone
+        except Exception as e:
+            print(f"    ⚠️ Erreur DDG adresse/tel (tentative {attempt}/{max_retries}) : {e}")
+            time.sleep(attempt * random.uniform(2.0, 4.0))
+    return adresse, telephone
+
+def obtenir_infos_entreprise(nom_entreprise, url_linkedin="", site_existant="", adresse_existante="", telephone_existant=""):
+    """
+    Renvoie (site_web, adresse, telephone) pour l'entreprise : reprend telles quelles
+    les valeurs déjà présentes dans le fichier d'entrée, et ne lance une recherche
+    QUE pour les informations manquantes.
+    """
+    site_web = (site_existant or "").strip()
+    adresse = (adresse_existante or "").strip()
+    telephone = (telephone_existant or "").strip()
+
+    if not site_web:
+        time.sleep(random.uniform(2.0, 4.0))
+        site_web = rechercher_site_web(nom_entreprise, url_linkedin)
+
+    if not adresse or not telephone:
+        time.sleep(random.uniform(2.0, 4.0))
+        adresse_trouvee, telephone_trouve = rechercher_adresse_telephone(nom_entreprise)
+        if not adresse:
+            adresse = adresse_trouvee
+        if not telephone:
+            telephone = telephone_trouve
+
+    return site_web, adresse, telephone
+
 def marquer_traite(colonne_url, url_traitee, statut, enc, sep):
     """
     Marque une ligne du fichier D'ENTREE (liste_urls.csv) comme traitée, dans une
@@ -365,19 +552,18 @@ def search_duckduckgo_direct(nom_entreprise, poste, max_results=5, max_retries=3
     for attempt in range(1, max_retries + 1):
         try:
             results = []
-            with DDGS() as ddgs:
-                # Utilisation de la méthode de texte directe comme dans votre exemple
-                ddg_generator = ddgs.text(query, region="fr-fr", max_results=max_results)
-                for item in ddg_generator:
-                    url = item.get("href", "")
-                    # Filtre corrigé : accepte tous les sous-domaines (fr., www., ca., etc.)
-                    # et cible spécifiquement les profils personnels (/in/), pas les pages entreprise
-                    if "linkedin.com/in/" in url:
-                        results.append({
-                            "title": item.get("title", ""),
-                            "url": url,
-                            "body": item.get("body", "")
-                        })
+            # Utilisation de la méthode de texte directe comme dans votre exemple
+            ddg_generator = ddgs_text_avec_timeout(query, region="fr-fr", max_results=max_results)
+            for item in ddg_generator:
+                url = item.get("href", "")
+                # Filtre corrigé : accepte tous les sous-domaines (fr., www., ca., etc.)
+                # et cible spécifiquement les profils personnels (/in/), pas les pages entreprise
+                if "linkedin.com/in/" in url:
+                    results.append({
+                        "title": item.get("title", ""),
+                        "url": url,
+                        "body": item.get("body", "")
+                    })
             return results
         except Exception as e:
             print(f"    ⚠️ Erreur DDG (tentative {attempt}/{max_retries}) : {e}")
@@ -407,6 +593,32 @@ def main():
     if "Traite" not in df_entree.columns:
         df_entree["Traite"] = ""
         df_entree.to_csv(FICHIER_ENTREE, index=False, sep=sep_entree, encoding=enc_entree)
+
+    # Détection des colonnes déjà existantes (nom / site web / adresse / téléphone) dans
+    # le fichier d'entrée, pour ne rechercher que ce qui manque. La colonne URL est
+    # exclue de la détection du nom pour ne pas la confondre avec la colonne nom si
+    # son en-tête contient aussi le mot "entreprise".
+    colonnes_hors_url = [c for c in df_entree.columns if c != colonne_url]
+    col_nom = detecter_colonne(df_entree[colonnes_hors_url], MOTS_CLES_COL_NOM) if colonnes_hors_url else None
+    col_site = detecter_colonne(df_entree, MOTS_CLES_COL_SITE)
+    col_adresse = detecter_colonne(df_entree, MOTS_CLES_COL_ADRESSE)
+    col_telephone = detecter_colonne(df_entree, MOTS_CLES_COL_TELEPHONE)
+    print(f"ℹ️ Colonnes détectées dans le fichier d'entrée — Nom: {col_nom or 'aucune'}, "
+          f"Site: {col_site or 'aucune'}, Adresse: {col_adresse or 'aucune'}, "
+          f"Téléphone: {col_telephone or 'aucune'}")
+
+    # Table de correspondance URL -> infos déjà connues (site/adresse/téléphone),
+    # construite une seule fois pour éviter de reparcourir le DataFrame à chaque ligne.
+    infos_existantes = {}
+    for _, ligne in df_entree.iterrows():
+        u = str(ligne.get(colonne_url, "")).strip()
+        if u and u not in infos_existantes:
+            infos_existantes[u] = {
+                "nom": str(ligne[col_nom]).strip() if col_nom and pd.notna(ligne[col_nom]) else "",
+                "site": str(ligne[col_site]).strip() if col_site and pd.notna(ligne[col_site]) else "",
+                "adresse": str(ligne[col_adresse]).strip() if col_adresse and pd.notna(ligne[col_adresse]) else "",
+                "telephone": str(ligne[col_telephone]).strip() if col_telephone and pd.notna(ligne[col_telephone]) else "",
+            }
 
     urls_a_traiter = df_entree[colonne_url].dropna().unique().tolist()
     print(f"🚀 {len(urls_a_traiter)} URL(s) détectée(s) dans '{FICHIER_ENTREE}'.")
@@ -444,13 +656,25 @@ def main():
     for index, url in enumerate(urls_du_lot, 1):
         url_clean = url.strip()
 
-        nom_entreprise = extraire_nom_entreprise(url_clean)
+        infos_connues = infos_existantes.get(url_clean, {})
+        nom_entreprise = infos_connues.get("nom") or extraire_nom_entreprise(url_clean)
         if not nom_entreprise:
             print(f"[{index}/{len(urls_du_lot)}] URL non valide : {url_clean}")
             marquer_traite(colonne_url, url_clean, "Invalide", enc_entree, sep_entree)
             continue
 
         print(f"[{index}/{len(urls_du_lot)}] Recherche directe pour : {nom_entreprise}...")
+
+        # Site web / adresse / téléphone : réutilise ce qui est déjà dans le fichier
+        # d'entrée, complète uniquement ce qui manque par une recherche.
+        site_web, adresse, telephone = obtenir_infos_entreprise(
+            nom_entreprise,
+            url_clean,
+            infos_connues.get("site", ""),
+            infos_connues.get("adresse", ""),
+            infos_connues.get("telephone", ""),
+        )
+
         profils_trouves = []
         profils_ecartes = 0
         urls_uniques_profils = set()
@@ -494,6 +718,9 @@ def main():
         row_data = {
             "URL Entreprise": url_clean,
             "Nom Entreprise": nom_entreprise,
+            "Site Web": site_web,
+            "Adresse": adresse,
+            "Telephone": telephone,
             "Statut Traitement": "Traite - Profil Trouve" if profils_trouves else "Traite - Aucun profil trouve"
         }
 
@@ -530,6 +757,8 @@ def main():
 
         print(f"  ✅ {len(profils_trouves)} profil(s) retenu(s) (emploi actuel confirmé) "
               f"— {profils_ecartes} écarté(s) (entreprise différente ou non confirmée) pour {nom_entreprise}.")
+        print(f"     🌐 Site: {site_web or 'non trouvé'} | 📍 Adresse: {adresse or 'non trouvée'} | "
+              f"📞 Tél: {telephone or 'non trouvé'}")
 
     restant_apres_lot = len(urls_restantes) - len(urls_du_lot)
     print(f"\n🎉 Script terminé pour ce lot. Fichier mis à jour : '{FICHIER_SORTIE}'")
