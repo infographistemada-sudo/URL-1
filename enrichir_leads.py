@@ -193,6 +193,82 @@ def rechercher_duckduckgo_html(requete, max_resultats=5):
     return resultats
 
 
+def nettoyer_titre_linkedin(title):
+    """
+    Nettoie un titre de résultat de recherche pour ne garder que la partie utile
+    (avant toute mention de "LinkedIn"), et retire les résidus de tiret/pipe en fin
+    de chaîne. Le mot "LinkedIn" marque quasi toujours la fin du titre utile.
+    """
+    if not title:
+        return ""
+    t = str(title)
+    idx = t.lower().find("linkedin")
+    if idx != -1:
+        t = t[:idx]
+    t = re.sub(r'[\s\-|]+$', '', t).strip()
+    return t
+
+
+def extraire_nom_complet_depuis_titre(title):
+    """
+    Extrait le NOM COMPLET (Prénom Nom) tel qu'affiché dans le titre d'un résultat
+    de recherche pour un profil LinkedIn. Format typique : "Prénom Nom - Poste -
+    Entreprise | LinkedIn" -> on garde le 1er segment (avant le 1er " - ").
+    On ne coupe que sur un tiret ENTOURÉ D'ESPACES, jamais collé à des lettres,
+    pour ne pas casser à tort des noms composés (ex: "Jean-Pierre").
+    """
+    t = nettoyer_titre_linkedin(title)
+    if not t:
+        return ""
+    segments = [p.strip() for p in re.split(r'\s+-\s+', t) if p.strip()]
+    return segments[0] if segments else ""
+
+
+def capitaliser_mot_compose(mot):
+    """Capitalise correctement un mot pouvant contenir un tiret (ex: 'jean-pierre'
+    -> 'Jean-Pierre', pas 'Jean-pierre' comme le ferait str.capitalize() seul)."""
+    return "-".join(p.capitalize() for p in mot.split("-"))
+
+
+def separer_prenom_nom(nom_complet):
+    """Découpe un nom complet 'Prénom Nom(s)' (trouvé via recherche web) en (prenom, nom)."""
+    if not nom_complet:
+        return None, None
+    mots = [m for m in nom_complet.strip().split() if m]
+    if len(mots) >= 2:
+        return capitaliser_mot_compose(mots[0]), " ".join(capitaliser_mot_compose(m) for m in mots[1:])
+    if len(mots) == 1:
+        return capitaliser_mot_compose(mots[0]), "Inconnu"
+    return None, None
+
+
+def rechercher_nom_depuis_linkedin(url_profil, max_resultats=5):
+    """
+    NOUVEAU : cherche le nom EXACT de la personne tel qu'affiché sur son profil
+    LinkedIn, via une recherche web ciblée sur cette URL précise - PAS en devinant
+    depuis le slug de l'URL (souvent tronqué, mal accentué, ou suivi d'un identifiant
+    aléatoire, ex: "jean-dup-4a2b1c" -> mauvaise reconstruction du nom). Le titre du
+    résultat de recherche est formaté par LinkedIn comme "Prénom Nom - Poste -
+    Entreprise | LinkedIn", dont on extrait le 1er segment.
+
+    Renvoie (prenom, nom) si trouvé, sinon (None, None) - l'appelant doit alors se
+    rabattre sur l'extraction depuis l'URL (moins fiable mais toujours disponible).
+    """
+    if not url_profil:
+        return None, None
+
+    resultats = rechercher_duckduckgo_html(f'"{url_profil}"', max_resultats=max_resultats)
+    for r in resultats:
+        if "linkedin.com/in/" not in r["url"].lower():
+            continue
+        nom_complet = extraire_nom_complet_depuis_titre(r["titre"])
+        if nom_complet:
+            prenom, nom = separer_prenom_nom(nom_complet)
+            if prenom:
+                return prenom, nom
+    return None, None
+
+
 def rechercher_liens_web_pour_domaine(domaine, max_resultats=5):
     """Interroge DuckDuckGo pour trouver des pages sur tout le web (pas seulement le
     site de l'entreprise) mentionnant une adresse e-mail du domaine cible -
@@ -921,8 +997,19 @@ def executer_enrichissement():
         url_propre = formater_url(url_brute)
         print(f"\n[{index+1}/{len(lignes)}] Traitement de : {url_propre}")
 
-        # 1. Extraction Prénom/Nom
-        prenom, nom = extraire_identité_depuis_url(url_propre)
+        # 1. Prénom/Nom : en priorité le nom EXACT trouvé via une recherche web sur
+        #    l'URL du profil (le titre LinkedIn indexé), plus fiable que de deviner
+        #    depuis le slug de l'URL. Repli sur l'extraction depuis l'URL si la
+        #    recherche ne trouve rien (site non indexé, requête bloquée, etc.).
+        print(" -> Recherche du nom exact de la personne sur LinkedIn...")
+        time.sleep(random.uniform(1.0, 2.0))
+        prenom_recherche, nom_recherche = rechercher_nom_depuis_linkedin(url_propre)
+        if prenom_recherche:
+            prenom, nom = prenom_recherche, nom_recherche
+            print(f" -> Nom exact trouvé via recherche web : {prenom} {nom}")
+        else:
+            prenom, nom = extraire_identité_depuis_url(url_propre)
+            print(f" -> Nom exact introuvable via recherche, repli sur l'URL : {prenom} {nom}")
         prenom, nom = corriger_mojibake(prenom), corriger_mojibake(nom)
 
         # 2. Détermination du domaine, par ordre de fiabilité décroissant :
