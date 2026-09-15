@@ -1,0 +1,101 @@
+Prenom,Nom,Email_Original,Resultat_Original,Domaine,Serveur_MX,Catch_All,Email_Valide_Trouve,Resultat_Nouvelle_Verification,Nb_Formats_Testes,Niveau_Confiance
+ambre,frouin,ambre.frouin@lecouventdesminimes.com,,lecouventdesminimes.com,lecouventdesminimes-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Ambre,Koenig,ambre.koenig@bdesignspa.com,,bdesignspa.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Ambre,Ligier,ambre.ligier@ritzparis.com,,ritzparis.com,mxb-00930d01.gslb.pphosted.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+ambre,moulin,ambre.moulin@centrespacassis.fr,,centrespacassis.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Ambre-Sarah,Isoard,ambresarah.isoard@hotel-alparena.com,,hotel-alparena.com,aspmx.l.google.com,Non,,Aucun format validé par SMTP,8,Très faible
+Ambroise,Munier,ambroise@lesaintremy.com,,lesaintremy.com,mx0.mail.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+Amédée,Mamet,amedee.mamet@contrastspa.com,,contrastspa.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Atsiné,Medegan,amedegan@deepnature.fr,,deepnature.fr,mx0.mail.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+Amel,Beddi,amel@spabienetre.fr,,spabienetre.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Amélia,Midenne,amelia.midenne@caliceo.com,,caliceo.com,caliceo-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Amelie,Debruyne,amelie.debruyne@centreroosevelt.com,,centreroosevelt.com,mta-gw.infomaniak.ch,Non,,Aucun format validé par SMTP,8,Très faible
+Amélie,REQUENA,amelie.requena@thalasso-concarneau.com,,thalasso-concarneau.com,mx4.mail.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+Amélie,Le coutey,amelie@institutspacocooning.fr,,institutspacocooning.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Amélie,Gumez,amelie@labergeriemassages.fr,,labergeriemassages.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Amélie,Marcouly,amelie@lespa.fr,,lespa.fr,mx3.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+Amélie,Merle,amelie@studionami.fr,,studionami.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Alexandra,Mes Instants Essentiels,amesinstantsessentiels@deepnature.fr,,deepnature.fr,mx0.mail.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+Amine,Gharbi,amine.gharbi@carltoncannes.com,,carltoncannes.com,mx1.mail.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+Amine,ZUNGI,amine.zungi@radissonblu.com,,radissonblu.com,radissonhotels.in.tmes.trendmicro.eu,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+audrey,minier,aminier@mohg.com,,mohg.com,eu-smtp-inbound-2.mimecast.com,Non,,Aucun format validé par SMTP,8,Très faible
+Amir,Agrebi,amir.agrebi@hotelbb.com,,hotelbb.com,aspmx.l.google.com,Non,,Aucun format validé par SMTP,8,Très faible
+amira,bh,amira.bh@accor.com,,accor.com,accor.in.tmes.trendmicro.eu,Non,,Aucun format validé par SMTP,8,Très faible
+Amjid,Haj,amjid.haj@ihg.com,,ihg.com,mxb-0036c501.gslb.pphosted.com,Non,,Aucun format validé par SMTP,8,Très faible
+Agnieszka,Mogilewicz,amogilewicz@brithotel.fr,,brithotel.fr,mx1.cyberbrain.net,Non,,Aucun format validé par SMTP,8,Très faible
+Amporn,[Inconnu],amporn@dhevari-spa.fr,,dhevari-spa.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Luvambano,Ana,ana.luvambano@accor.com,,accor.com,accor.in.tmes.trendmicro.eu,Non,,Aucun format validé par SMTP,8,Très faible
+Ana,Parouteau,ana.parouteau@louvrehotels.com,,louvrehotels.com,louvrehotels-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anabela,G.,anabela.g@bestwestern.fr,,bestwestern.fr,bestwestern-mx1.titanhq.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anabelle,Millet,anabelle@hotel-brittany.com,,hotel-brittany.com,SMTP.GOOGLE.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Ana Carolina,Giacomelli,anacarolina.giacomelli@lediamondrock.com,,lediamondrock.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+ana carolina,leperlier,anacarolina.leperlier@leprincehotel.com,,leprincehotel.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Anaëlle,C,anaelle@ily-hotels.com,,ily-hotels.com,mx4.mail.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+Anaelle,Bernard,anaelle@sandrospa.fr,,sandrospa.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Anaïs,Amblard,anais.amblard@domainedeprimard.com,,domainedeprimard.com,domainedeprimard-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anaïs,Cancan,anais.cancan@cgh-residences.com,,cgh-residences.com,mx-mibc-fr-10.mailinblack.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anais,Chevalliez,anais.chevalliez@ihg.com,,ihg.com,mxb-0036c501.gslb.pphosted.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anais,D,anais.d@ponant.com,,ponant.com,mxb-0094fe01.gslb.pphosted.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Anaïs,Débydéal,anais.debydeal@hoteldeseze.com,,hoteldeseze.com,hoteldeseze-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anaïs,Fleurot,anais.fleurot@martinez.com,,martinez.com,mail.martinez.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anaïs,François,anais.francois@centrotel-spa.com,,centrotel-spa.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+anais,gauchez,anais.gauchez@loisium.com,,loisium.com,loisium-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anaïs,Gruninger,anais.gruninger@marriott.com,,marriott.com,marriott-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anaïs,Jofresa Bourion,anais.jofresa@lesoleildor-megeve.fr,,lesoleildor-megeve.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+anaïs,l.,anais.l@hoteloursblanc.com,,hoteloursblanc.com,hotelchamonix.net,Non,,Aucun format validé par SMTP,8,Très faible
+Anaïs,Laforest,anais.laforest@imperialpalace.fr,,imperialpalace.fr,imperialpalace-fr.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anaïs,Montbrand,anais.montbrand@mhsibuet.com,,mhsibuet.com,mhsibuet-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anaïs,Olry,anais.olry@radissonblu.com,,radissonblu.com,radissonhotels.in.tmes.trendmicro.eu,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Anaïs,Ortega,anais.ortega@domainedeverchant.fr,,domainedeverchant.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Anaïs,Raymond,anais.raymond@martinez.com,,martinez.com,mail.martinez.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anais,Seghir,anais.seghir@hively-hospitality.com,,hively-hospitality.com,mx3.coaxis.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anais,Szneder,anais.szneider@hotelbb.com,,hotelbb.com,aspmx.l.google.com,Non,,Aucun format validé par SMTP,9,Très faible
+Anaïs,Germain,anais@biospa-esthetique.fr,,biospa-esthetique.fr,mta-gw.infomaniak.ch,Non,,Aucun format validé par SMTP,8,Très faible
+Anaïs,Chabert,anais@spadelyon.fr,,spadelyon.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Anaïs,Fretté,anais@wellnessconsulting.fr,,wellnessconsulting.fr,imap.mail.webnode.com,Non,,Aucun format validé par SMTP,8,Très faible
+anastasia,amico,anastasia.amico@lareserve-paris.com,,lareserve-paris.com,mxb-008f2201.gslb.pphosted.com,Non,aamico@lareserve-paris.com,Valide (SMTP 250),4,Élevé
+Anderson,Espinosa Rojas,anderson.espinosa@adagio-apartements.com,,adagio-apartements.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+André,Bourguignon,andre.bourguignon@bdesignspa.com,,bdesignspa.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+André,Torres,andre.torres@7hotel-spa.com,,7hotel-spa.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Andrea,Chambron,andrea.chambron@relais-thalasso.com,,relais-thalasso.com,ns7.squallnetwork.net,Non,,Aucun format validé par SMTP,8,Très faible
+Andréa,Fournet,andrea.fournet@lareserve-paris.com,,lareserve-paris.com,mxb-008f2201.gslb.pphosted.com,Non,afournet@lareserve-paris.com,Valide (SMTP 250),4,Élevé
+Andréa,Vicens Mathieu,andrea@bullededoucesheures.fr,,bullededoucesheures.fr,mail.bullededoucesheures.fr,Non,,Aucun format validé par SMTP,8,Très faible
+andres,lopez,andres.lopez@okkohotels.com,,okkohotels.com,okkohotels-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+andrés,m.,andres.m@machefert.com,,machefert.com,machefert-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+andreu,coma roca,andreu.comaroca@lespresdeugenie.com,,lespresdeugenie.com,spool.mail.gandi.net,Non,,Aucun format validé par SMTP,8,Très faible
+Andrew,Dewar,andrew.dewar@holidayinnexpress.com,,holidayinnexpress.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Andreycia,Senss,andreycia.senss@hotelwestminster.com,,hotelwestminster.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Andy,Romero,andy@europespa.fr,,europespa.fr,mx186.mb1p.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Ange,C.,ange.c@allsuites.fr,,allsuites.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+angel,Divovic,angel.divovic@bestwestern.fr,,bestwestern.fr,bestwestern-mx1.titanhq.com,Non,,Aucun format validé par SMTP,8,Très faible
+angel,lafond,angel.lafond@accor.com,,accor.com,accor.in.tmes.trendmicro.eu,Non,,Aucun format validé par SMTP,8,Très faible
+Angela,Biscardi,angela.biscardi@fourseasons.com,,fourseasons.com,mx2.fourseasons.iphmx.com,Non,,Aucun format validé par SMTP,8,Très faible
+Angele,Lacoste,angele.lacoste@chateaudebeaulieu.fr,,chateaudebeaulieu.fr,chateaudebeaulieu-fr.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Angèle,THOMAS,angele.thomas@hilton.com,,hilton.com,hilton-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Angele,GREGOIRE,angele@ancremarine.com,,ancremarine.com,mail.ancremarine.com,Non,,Aucun format validé par SMTP,8,Très faible
+Angele,Fajfer,angele@domainedevilleray.com,,domainedevilleray.com,mx0.mail.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+angélina,barra,angelina.barra@lvrivieraspa.com,,lvrivieraspa.com,aspmx.l.google.com,Non,,Aucun format validé par SMTP,8,Très faible
+angelina,lake,angelina.lake@thallacap.com,,thallacap.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+angélina,lopez,angelina.lopez@spa.fr,,spa.fr,ASPMX.L.GOOGLE.COM,Non,,Aucun format validé par SMTP,8,Très faible
+angéline,le roux,angeline.leroux@ghphotels.com,,ghphotels.com,ghphotels-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+angéline,martinez,angeline.martinez@theoriginalscollection.com,,theoriginalscollection.com,spool.mail.gandi.net,Non,,Aucun format validé par SMTP,8,Très faible
+Angeline,Lebossé,angeline@angeline-esthetique.fr,,angeline-esthetique.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Angelique,Dineard,angelique.dineard@hotel-cantemerle.com,,hotel-cantemerle.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+angelique,goudmand,angelique.goudmand@royalchampagne.com,,royalchampagne.com,royalchampagne-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+angelique,launay,angelique.launay@puremontagne.fr,,puremontagne.fr,mail.puremontagne.fr,Non,,Aucun format validé par SMTP,8,Très faible
+Angélique,Mendy,angelique.mendy@ponant.com,,ponant.com,mxb-0094fe01.gslb.pphosted.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+angelique,rochefeuille,angelique.rochefeuille@lvrivieraspa.com,,lvrivieraspa.com,aspmx.l.google.com,Non,,Aucun format validé par SMTP,8,Très faible
+ANGELIQUE,SURLEMONT,angelique.surlemont@marriott.com,,marriott.com,marriott-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Angélique,Wagnier,angelique@yourteandspa.fr,,yourteandspa.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+angie,rabbia,angie.rabbia@royalchampagne.com,,royalchampagne.com,royalchampagne-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Anita,Reinhardt,anita.reinhardt@balaruc-les-bains.com,,balaruc-les-bains.com,antispam3.xefi.fr,Non,,Aucun format validé par SMTP,8,Très faible
+Anita,Lemercier,anita@eveildessens-evreux.fr,,eveildessens-evreux.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Anna,Ginesta,anna.ginesta@caliceo.com,,caliceo.com,caliceo-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+anna,moreno,anna.moreno@accor.com,,accor.com,accor.in.tmes.trendmicro.eu,Non,,Aucun format validé par SMTP,8,Très faible
+Anna,Rejek,anna.rejek@ihg.com,,ihg.com,mxb-0036c501.gslb.pphosted.com,Non,anna.rejek@ihg.com,Valide (SMTP 250),1,Élevé
+Anna,Hoshina,anna@relooking-minceur.fr,,relooking-minceur.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+annabelle,cadenat,annabelle.cadenat@hotelnegrecoste.com,,hotelnegrecoste.com,hotelnegrecoste-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+annabelle,cohn valenti,annabelle.cohn@marriott.com,,marriott.com,marriott-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,9,Très faible
+annabelle,laisney,annabelle.laisney@lerituelhotel.com,,lerituelhotel.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+annabelle,mouaci,annabelle.mouaci@lemathurin.com,,lemathurin.com,mx4.mail.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+Annabelle,Weber,annabelle.weber@relaischateaux.com,,relaischateaux.com,mail.cleanmail.eu,Non,,Aucun format validé par SMTP,8,Très faible
