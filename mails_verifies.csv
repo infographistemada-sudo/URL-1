@@ -99,3 +99,103 @@ catherine.rollier@manoirdegressy.com,manoirdegressy.com,manoirdegressy-com.mail.
 catherine.tran@spabusinessconsulting.com,spabusinessconsulting.com,,,Impossible (résolution MX échouée),Impossible (MX)
 catherine.waligora@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
 catherine@balneasportspa.fr,balneasportspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+catherine@chaletremy.com,chaletremy.com,spool.mail.gandi.net,Non,Inexistant (SMTP 550),Inexistant
+catherine@espacebeautebienetre.fr,espacebeautebienetre.fr,aspmx.l.google.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+catherine@leden-escalezen.fr,leden-escalezen.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+catherine@otheraspa.fr,otheraspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+catrine.mcgregor@disney.com,disney.com,disney-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+cboquet@deepnature.fr,deepnature.fr,mx0.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [52.154.130.213])",Incertain
+cbouchi@mohg.com,mohg.com,eu-smtp-inbound-1.mimecast.com,Non,Incertain (Code 451 : Internal resource temporarily unavailable - https://community.mimecast.com/docs/DOC-1369#451 [0Oqyr7kCOVmj47wHRSi8WQ.uk7]),Incertain
+cboulmier@groupebarriere.com,groupebarriere.com,aspmx.l.google.com,Non,Valide (SMTP 250),Valide
+cbouvier@cneth.org,cneth.org,mx2.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [52.154.130.213])",Incertain
+cc.dubuc@thegatecollection.com,thegatecollection.com,mx-01-eu-west-1.prod.hydra.sophos.com,Non,Inexistant (SMTP 550),Inexistant
+ccaffiot@diormail.com,diormail.com,mxa-0024c501.gslb.pphosted.com,Non,Expéditeur rejeté par le serveur (code 550 : 5.7.1 Command rejected) - vérification impossible,Erreur (voir Resultat_SMTP)
+ccaprile@hotelducastellet.com,hotelducastellet.com,vade-mx-fr01.hornetsecurity.com,Non,Incertain (Code 554 : 5.7.1 <ccaprile@hotelducastellet.com>: Relay access denied),Incertain
+ccarrillo@ponant.com,ponant.com,mxb-0094fe01.gslb.pphosted.com,Non,Expéditeur rejeté par le serveur (code 550 : 5.7.1 Command rejected) - vérification impossible,Erreur (voir Resultat_SMTP)
+ccasabo@groupebarriere.com,groupebarriere.com,aspmx.l.google.com,Non,Valide (SMTP 250),Valide
+cchalumeau@deepnature.fr,deepnature.fr,mx0.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [52.154.130.213])",Incertain
+ccharneau@groupe-atlantic.com,groupe-atlantic.com,mxa-004f0402.gslb.pphosted.com,Non,Valide (SMTP 250),Valide
+cconstant@groupe-atlantic.com,groupe-atlantic.com,mxa-004f0402.gslb.pphosted.com,Non,Valide (SMTP 250),Valide
+ccoste@diormail.com,diormail.com,mxa-0024c501.gslb.pphosted.com,Non,Expéditeur rejeté par le serveur (code 550 : 5.7.1 Command rejected) - vérification impossible,Erreur (voir Resultat_SMTP)
+ccyr@thermes-larocheposay.fr,thermes-larocheposay.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+cdior@diormail.com,diormail.com,mxa-0024c501.gslb.pphosted.com,Non,Expéditeur rejeté par le serveur (code 550 : 5.7.1 Command rejected) - vérification impossible,Erreur (voir Resultat_SMTP)
+cdube@chateau-de-fonscolombe.com,chateau-de-fonscolombe.com,,,Impossible (résolution MX échouée),Impossible (MX)
+cdupuy@groupebarriere.com,groupebarriere.com,aspmx.l.google.com,Non,Inexistant (SMTP 550),Inexistant
+cechavidre@chainethermale.fr,chainethermale.fr,mail-relay01-inetum.chainethermale.fr,Non,Valide (SMTP 250),Valide
+cecile.arlicmano@chateaudefiac.com,chateaudefiac.com,chateaudefiac-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+cecile.cereto@adagio-apartements.com,adagio-apartements.com,,,Impossible (résolution MX échouée),Impossible (MX)
+cecile.f@lecollet.com,lecollet.com,mx.online.net,Non,Inexistant (SMTP 550),Inexistant
+cecile.groix@laciteroyale.com,laciteroyale.com,mx4.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [52.154.130.213])",Incertain
+cecile.h@lareserve-paris.com,lareserve-paris.com,mxa-008f2201.gslb.pphosted.com,Non,Expéditeur rejeté par le serveur (code 550 : 5.7.1 Command rejected) - vérification impossible,Erreur (voir Resultat_SMTP)
+cecile.lafontan@zannierhotels.com,zannierhotels.com,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [52.154.130.213])",Incertain
+cecile.legenne@disney.com,disney.com,disney-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+cecile.morandini@odalys.fr,odalys.fr,odalys-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+cecile.paganessi@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <cecile.paganessi@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+cecile.percevault@hotelbb.com,hotelbb.com,aspmx.l.google.com,Non,Inexistant (SMTP 550),Inexistant
+cecile.r@yrnet.com,yrnet.com,mxb-0021d901.gslb.pphosted.com,Non,Expéditeur rejeté par le serveur (code 550 : 5.7.1 Command rejected) - vérification impossible,Erreur (voir Resultat_SMTP)
+cecile@espacebeaute.fr,espacebeaute.fr,mx186.mb1p.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+cedric.abes@adagio-apartements.com,adagio-apartements.com,,,Impossible (résolution MX échouée),Impossible (MX)
+cedric.anton@olenza.fr,olenza.fr,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [52.154.130.213])",Incertain
+cedric.audy@campanile.fr,campanile.fr,campanile-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+cedric.baude@chateau-de-salles.com,chateau-de-salles.com,mx.transip.email,Non,Inexistant (SMTP 550),Inexistant
+cedric.bineau@ace-hotel.com,ace-hotel.com,acehotel-com0i.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+cedric.duant@montempo.fr,montempo.fr,montempo-fr.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+cedric.folfoldy@irrijardin.fr,irrijardin.fr,irrijardin-fr.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+cedric.glavieux@carltoncannes.com,carltoncannes.com,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [52.154.130.213])",Incertain
+cedric.janvier@hoteldeseze.com,hoteldeseze.com,hoteldeseze-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+cedric.lemesle@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+cedric.m@d-edge.com,d-edge.com,aspmx.l.google.com,Non,Inexistant (SMTP 550),Inexistant
+cedric.pierre@cedricpierre-paysage.fr,cedricpierre-paysage.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+cedric.rossowski@orfea.fr,orfea.fr,orfea-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+cedric.sabbe@comohotels.com,comohotels.com,au-smtp-inbound-2.mimecast.com,Non,Incertain (Code 451 : Internal resource temporarily unavailable - https://community.mimecast.com/docs/DOC-1369#451 [bNNQTc9hN0erwAQgw5ItGw.au9]),Incertain
+cedric.sordillon@chateaudecourban.com,chateaudecourban.com,ex4.mail.ovh.net,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+cedric.vinouse@lesormes.com,lesormes.com,lesormes-com.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+cedric.waterkeyn@rosewoodhotels.com,rosewoodhotels.com,rosewoodhotels-com.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+cedric@cryoskin.fr,cryoskin.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+cedric@thaimassageevent.fr,thaimassageevent.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+cedrik.ollivault@rosewoodhotels.com,rosewoodhotels.com,rosewoodhotels-com.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+celia.azema@mamashelter.com,mamashelter.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+celia.boussarie@chateau-reynats.com,chateau-reynats.com,,,Impossible (résolution MX échouée),Impossible (MX)
+celia.clave@goldentulip.com,goldentulip.com,goldentulip-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+celia.goudemandjacques@dorchestercollection.com,dorchestercollection.com,eu-smtp-inbound-1.mimecast.com,Non,Incertain (Code 451 : Internal resource temporarily unavailable - https://community.mimecast.com/docs/DOC-1369#451 [WvL-S-RgNGmG3S5U0lLDFw.uk210]),Incertain
+celia.jacquet@nomadetsens.com,nomadetsens.com,,,Impossible (résolution MX échouée),Impossible (MX)
+celia.lizot@nhow-hotels.com,nhow-hotels.com,nhowhotels-com01b.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+celia.meyer@sowell.fr,sowell.fr,sowell-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+celia.suc@theoriginalshotels.com,theoriginalshotels.com,theoriginalshotels-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+celia@dayspa.fr,dayspa.fr,dayspa-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+celia@dayspalaroche.fr,dayspalaroche.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+celine.b@sensoria.fr,sensoria.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+celine.bernard@bloomhouse-hotel.com,bloomhouse-hotel.com,bloomhousehotel-com02e.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+celine.bornier@ihg.com,ihg.com,mxb-0036c501.gslb.pphosted.com,Non,Expéditeur rejeté par le serveur (code 550 : 5.7.1 Command rejected) - vérification impossible,Erreur (voir Resultat_SMTP)
+celine.breysse@bestwestern.fr,bestwestern.fr,bestwestern-mx1.titanhq.com,Non,Inexistant (SMTP 550),Inexistant
+celine.breysse@relaisdelaguiole.fr,relaisdelaguiole.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+celine.chaplart@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <celine.chaplart@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+celine.d@vichycelestins.com,vichycelestins.com,mail.debussac.fr,Non,Erreur réseau : [Errno -2] Name or service not known,Erreur (voir Resultat_SMTP)
+celine.deleidi@evianresort.com,evianresort.com,mxa-000f8e02.gslb.pphosted.com,Non,Expéditeur rejeté par le serveur (code 550 : 5.7.1 Command rejected) - vérification impossible,Erreur (voir Resultat_SMTP)
+celine.dousset@missmbeauty.fr,missmbeauty.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+celine.espigat@villarsalpinespa.ch,villarsalpinespa.ch,,,Impossible (résolution MX échouée),Impossible (MX)
+celine.falco@centaurus-hm.com,centaurus-hm.com,,,Impossible (résolution MX échouée),Impossible (MX)
+celine.fronteau@vichycelestins.com,vichycelestins.com,mail.debussac.fr,Non,Erreur réseau : [Errno -2] Name or service not known,Erreur (voir Resultat_SMTP)
+celine.hicauber@thermes-saubusse.com,thermes-saubusse.com,mx0.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [52.154.130.213])",Incertain
+celine.hugounet@grand-hotel-orleans.com,grand-hotel-orleans.com,mx4.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [52.154.130.213])",Incertain
+celine.jounet@hotel-calarossa.com,hotel-calarossa.com,hotelcalarossa-com01c.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+celine.langot@ritzparis.com,ritzparis.com,mxa-00930d01.gslb.pphosted.com,Non,Expéditeur rejeté par le serveur (code 550 : 5.7.1 Command rejected) - vérification impossible,Erreur (voir Resultat_SMTP)
+celine.legrand@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+celine.malecot@thalazur.fr,thalazur.fr,mx3.coaxis.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+celine.prudhomme@grand-hotel-saint-jean-de-luz.com,grand-hotel-saint-jean-de-luz.com,,,Impossible (résolution MX échouée),Impossible (MX)
+celine.risso@royalchampagne.com,royalchampagne.com,royalchampagne-com.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+celine.talineau@zoodelafleche.fr,zoodelafleche.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+celine.vercollier@hotelbb.com,hotelbb.com,aspmx.l.google.com,Non,Valide (SMTP 250),Valide
+celine.verdillon@goldentulipsophiaantipolis.com,goldentulipsophiaantipolis.com,aspmx.l.google.com,Non,Inexistant (SMTP 550),Inexistant
+celine@2mwellness.fr,2mwellness.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+celine@belleapeuagitee.fr,belleapeuagitee.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+celine@charmeline.fr,charmeline.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+celine@crychar.com,crychar.com,smtp.google.com,Non,Inexistant (SMTP 550),Inexistant
+celine@cryopole.com,cryopole.com,cryopole-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+celine@edenspa.fr,edenspa.fr,mx00.ionos.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+celine@effervescence-spa.fr,effervescence-spa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+celine@excellspa.com,excellspa.com,,,Impossible (résolution MX échouée),Impossible (MX)
+celine@lessecretsrooms.fr,lessecretsrooms.fr,mx00.ionos.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+celine@linstitutcs.fr,linstitutcs.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+celine@maisondebeaute.fr,maisondebeaute.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+celine@maisongalaxiart.fr,maisongalaxiart.fr,,,Impossible (résolution MX échouée),Impossible (MX)
