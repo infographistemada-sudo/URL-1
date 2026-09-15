@@ -999,3 +999,103 @@ d.blouin@exploris-cruises.com,exploris-cruises.com,,,Impossible (résolution MX 
 d.bocci@reflexosteo.com,reflexosteo.com,smtp.google.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
 d.bosio@metropole.mc,metropole.mc,,,Impossible (résolution MX échouée),Impossible (MX)
 d.bouchat@centralparkhotel.fr,centralparkhotel.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+d.boullier@vert-marine.com,vert-marine.com,vertmarine-com01b.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.brunet@defiplanet.com,defiplanet.com,defiplanet-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.c@diormail.com,diormail.com,mxb-0024c501.gslb.pphosted.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+d.david@agh-hospitality.com,agh-hospitality.com,aghhospitality-com0i.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.delli@jfg-clinic.com,jfg-clinic.com,aspmx.l.google.com,Non,Inexistant (SMTP 550),Inexistant
+d.delugin@kapcare.com,kapcare.com,,,Impossible (résolution MX échouée),Impossible (MX)
+d.descampeaux@leshotelstransparticuliers.com,leshotelstransparticuliers.com,,,Impossible (résolution MX échouée),Impossible (MX)
+d.djaito@grape-hospitality.com,grape-hospitality.com,grapehospitality-com01c.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.dupuy@igesa.fr,igesa.fr,igesa-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.eisele@lebaillidesuffren.com,lebaillidesuffren.com,lebaillidesuffren-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.espana@hotelduroi.com,hotelduroi.com,mail.hotelduroi.com,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+d.faucher@chateaudecandes.fr,chateaudecandes.fr,mx4.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.161.58.224])",Incertain
+d.faucher@clineb-spa.fr,clineb-spa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+d.feras@airelles.com,airelles.com,airelles-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.frajdenrajch@starvac-group.com,starvac-group.com,starvacgroup-com01i.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+d.frucot@domainedesroches.com,domainedesroches.com,domainedesroches-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.girard@holishotel.com,holishotel.com,,,Impossible (résolution MX échouée),Impossible (MX)
+d.girardon@thermesmarins.com,thermesmarins.com,,,Impossible (résolution MX échouée),Impossible (MX)
+d.gireau@relaisthalasso.com,relaisthalasso.com,relaisthalasso-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+d.laigle@recrea.fr,recrea.fr,recrea-fr.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+d.lambert@vert-marine.com,vert-marine.com,vertmarine-com01b.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.lautru@hotel-arcenciel.fr,hotel-arcenciel.fr,mail.hotel-arcenciel.fr,Non,Inexistant (SMTP 550),Inexistant
+d.legendre@agglo-pdi.fr,agglo-pdi.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+d.lelong@equalia.fr,equalia.fr,equalia-fr.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+d.lemouellic@dianahotel.fr,dianahotel.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+d.lizondo@appartcity.com,appartcity.com,appartcity-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+d.madon@reservebeaulieu.com,reservebeaulieu.com,reservebeaulieu-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.martinez@hautsdeloire.com,hautsdeloire.com,hautsdeloire-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.mervelay@louvre-hotels.com,louvre-hotels.com,louvrehotels-com01e.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.monteiro@lavorelhotels.com,lavorelhotels.com,lavorelhotels-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.moreau@vert-marine.com,vert-marine.com,vertmarine-com01b.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.muller@haaitza.com,haaitza.com,aspmx.l.google.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+d.noirtault@ghp-hotels.com,ghp-hotels.com,ghphotels-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.noyer@cauterets.com,cauterets.com,mx0.aquaray.com,Non,Inexistant (SMTP 550),Inexistant
+d.obozil@vert-marine.com,vert-marine.com,vertmarine-com01b.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.persichella@hotelmonaco.fr,hotelmonaco.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+d.poisbeau@lycee-sainte-anne.fr,lycee-sainte-anne.fr,lyceesainteanne-fr01c1b.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.prot@arc1950.com,arc1950.com,s18.altospam.net,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+d.salaun@thalasso-valdys.com,thalasso-valdys.com,,,Impossible (résolution MX échouée),Impossible (MX)
+d.saurat@equalia.fr,equalia.fr,equalia-fr.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+d.saveuse@villacosy.com,villacosy.com,mx01.1and1.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+d.simon@castelfleuri.fr,castelfleuri.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+d.spenlehauer@umih.fr,umih.fr,umih-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+d.stapane@domainedelorangerie.fr,domainedelorangerie.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+d.torrens@tarbouriech.fr,tarbouriech.fr,ASPMX.L.GOOGLE.com,Non,Inexistant (SMTP 550),Inexistant
+d.voynot@thalasso-roscoff.com,thalasso-roscoff.com,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.161.58.224])",Incertain
+d.younes@ecolespasinstituts.com,ecolespasinstituts.com,,,Impossible (résolution MX échouée),Impossible (MX)
+d.zourane@minorhotels.com,minorhotels.com,minorhotels-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+dagmar.lombard@crillonlebrave.com,crillonlebrave.com,crillonlebrave-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+daisy.gilbart@hotelbb.com,hotelbb.com,aspmx.l.google.com,Non,Inexistant (SMTP 550),Inexistant
+dambert@groupe-atlantic.com,groupe-atlantic.com,mxb-004f0402.gslb.pphosted.com,Non,Valide (SMTP 250),Valide
+damien.audric@disney.com,disney.com,disney-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+damien.bugnon@lacitedo.fr,lacitedo.fr,lacitedo-fr.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+damien.d@irrijardin.fr,irrijardin.fr,irrijardin-fr.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+damien.dirson@sowell.fr,sowell.fr,sowell-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+damien.dunie@lesbalcons.com,lesbalcons.com,mx01.lesbalcons.com,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+damien.durand@mmv.fr,mmv.fr,mmv-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+damien.enique@hotelelysee.com,hotelelysee.com,hotelelysee-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+damien.huwaert@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <damien.huwaert@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+damien.lacherest@lesjasmins.fr,lesjasmins.fr,mx1.jimdo.com,Non,Inexistant (SMTP 550),Inexistant
+damien.legrand@beau-rivage.ch,beau-rivage.ch,smtp2.ngit.ch,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+damien.lozeille@caliceo.com,caliceo.com,caliceo-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+damien.noiriel@spamanager.fr,spamanager.fr,mx01.ionos.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+damien.perrot@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+damien.primard@peyrefitte.com,peyrefitte.com,antispam3.xefi.fr,Non,Inexistant (SMTP 550),Inexistant
+damien.raphanel@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+damien.saby@irrijardin.fr,irrijardin.fr,irrijardin-fr.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+damien.salembier@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+damien.thomas@odalys.fr,odalys.fr,odalys-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+damien@damienlebail.fr,damienlebail.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+damien@spamanager.fr,spamanager.fr,mx01.ionos.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+danae.marty@hotelzoologie.com,hotelzoologie.com,hotelzoologie-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+dandolenko@sbm.mc,sbm.mc,mxb-0085f401.gslb.pphosted.com,Non,Inexistant (SMTP 550),Inexistant
+daniel.carpentier@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <daniel.carpentier@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+daniel.fang@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+daniel.mazzola@lebarthelemyhotel.com,lebarthelemyhotel.com,,,Impossible (résolution MX échouée),Impossible (MX)
+daniel.nunes@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+daniel.orlando@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <daniel.orlando@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+daniel.poulin@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+daniel.ribeiro@sowell.fr,sowell.fr,sowell-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+daniel.sebaoun@roussillhotel.com,roussillhotel.com,d64824a.ess.barracudanetworks.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+daniel.suel@hotelspadirecteur.fr,hotelspadirecteur.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+daniel.sulivan@guerlain.fr,guerlain.fr,mxb-0024c501.gslb.pphosted.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+daniela.bela@directricespa.fr,directricespa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+daniela.ghencia@hoteldulac.fr,hoteldulac.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+daniela.leite@clubmetropolitan.com,clubmetropolitan.com,clubmetropolitan-com.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+daniele.doffo@disney.com,disney.com,disney-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+danielle.lagrange@hoteldeparis-sainttropez.com,hoteldeparis-sainttropez.com,hoteldeparissainttropez-com03b.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+danilia.kezia@balihospitality.com,balihospitality.com,,,Impossible (résolution MX échouée),Impossible (MX)
+dany.pachot@chaismonnethotel.com,chaismonnethotel.com,chaismonnethotel-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+daphne.lesnom@marriott.com,marriott.com,marriott-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+dario.valenza@mmv.fr,mmv.fr,mmv-fr.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+david.ali@marriott.com,marriott.com,marriott-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+david.anstett@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <david.anstett@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+david.beaulant@cgh-residences.com,cgh-residences.com,mx-mibc-fr-10.mailinblack.com,Non,Inexistant (SMTP 550),Inexistant
+david.bedu@lareserve-paris.com,lareserve-paris.com,mxa-008f2201.gslb.pphosted.com,Non,Inexistant (SMTP 550),Inexistant
+david.bellini@soredis.fr,soredis.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+david.bihannic@yrnet.com,yrnet.com,mxb-0021d901.gslb.pphosted.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+david.blanc@mmv.fr,mmv.fr,mmv-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+david.boyer@thalazur.fr,thalazur.fr,mx2.coaxis.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
