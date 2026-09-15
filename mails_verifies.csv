@@ -799,3 +799,103 @@ contact@lesbrumesdemasaline.fr,lesbrumesdemasaline.fr,,,Impossible (résolution 
 contact@lescalecocoon.fr,lescalecocoon.fr,,,Impossible (résolution MX échouée),Impossible (MX)
 contact@lescentciels.fr,lescentciels.fr,oblis3.serveur-dedie.fr,Non,Timeout (le port 25 est probablement bloqué par votre réseau/hébergeur),Erreur (voir Resultat_SMTP)
 contact@leschambresdannie.com,leschambresdannie.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@lescimesbleues.com,lescimesbleues.com,spool.mail.gandi.net,Non,Inexistant (SMTP 550),Inexistant
+contact@lesfleuvesdelessentiel.fr,lesfleuvesdelessentiel.fr,spool.mail.gandi.net,Non,Inexistant (SMTP 550),Inexistant
+contact@leslodgesduchateau.com,leslodgesduchateau.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@lesoceades.fr,lesoceades.fr,lesoceades-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+contact@lespadanslenoir.com,lespadanslenoir.com,mail.lespadanslenoir.com,Non,Valide (SMTP 250),Valide
+contact@lespadesneiges.com,lespadesneiges.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@lespadiliana.fr,lespadiliana.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@lespaodette.fr,lespaodette.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@les-sablons.com,les-sablons.com,lessablons-com0i.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+contact@les-saules.fr,les-saules.fr,mx01.1and1.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@les-sens-des-cimes.fr,les-sens-des-cimes.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@lessensduspa.fr,lessensduspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@lesthermesdusultan.fr,lesthermesdusultan.fr,mail.lesthermesdusultan.fr,Non,Valide (SMTP 250),Valide
+contact@lesvoilesdugrandlarge.com,lesvoilesdugrandlarge.com,mx03.cloud.vadesecure.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@letempsdescerisesbeachhotel.com,letempsdescerisesbeachhotel.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@letiradou.com,letiradou.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@le-v-vaujany.com,le-v-vaujany.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@lez-eaux.com,lez-eaux.com,mx-mibc-fr-09.mailinblack.com,Non,Valide (SMTP 250),Valide
+contact@lilaospa.fr,lilaospa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@linstantcarita.com,linstantcarita.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@linstantcryo.fr,linstantcryo.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@linstantspa.fr,linstantspa.fr,mx01.ionos.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@locguenole.com,locguenole.com,locguenole-com.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+contact@loisellerie-angers.fr,loisellerie-angers.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@loreeduspa.fr,loreeduspa.fr,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@louvre-hotels.com,louvre-hotels.com,louvrehotels-com01e.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+contact@madameimagine.fr,madameimagine.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@mainsdumonde.com,mainsdumonde.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@maisondespeyrat.com,maisondespeyrat.com,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@maisonemy.fr,maisonemy.fr,mx00.ionos.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@maisonlelia.com,maisonlelia.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@maisonlr.fr,maisonlr.fr,mx01.ionos.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@maisonzugno.com,maisonzugno.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@mamaisonzen.fr,mamaisonzen.fr,spool.mail.gandi.net,Non,Inexistant (SMTP 550),Inexistant
+contact@mamansetmerveilles.fr,mamansetmerveilles.fr,mx4.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@marinaozone.com,marinaozone.com,mx2.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@masdegarrigon.com,masdegarrigon.com,masdegarrigon-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@masdesarts-spa.com,masdesarts-spa.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@maslapauline.com,maslapauline.com,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@meaux-spa77.fr,meaux-spa77.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@medinaspa.fr,medinaspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@millesima-hotel.com,millesima-hotel.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@millesimespa.fr,millesimespa.fr,mx1.api-and-you.com,Non,Incertain (Code 554 : 5.7.1 <contact@millesimespa.fr>: Relay access denied),Incertain
+contact@moon-nantes.fr,moon-nantes.fr,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@moulindemoissac.com,moulindemoissac.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@moulin-hauterive.com,moulin-hauterive.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@myskin-institut.fr,myskin-institut.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@naturedeaux.fr,naturedeaux.fr,mx4.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@nephtys-hammam.fr,nephtys-hammam.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@nicegardenhotel.com,nicegardenhotel.com,mx3.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@nicey.com,nicey.com,aspmx.l.google.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@odeonspa.fr,odeonspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@odescimes.com,odescimes.com,mx-mibc-fr-10.mailinblack.com,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@odyssea-spa.com,odyssea-spa.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@omaspa.fr,omaspa.fr,aspmx.l.google.com,Non,Inexistant (SMTP 550),Inexistant
+contact@origaia.fr,origaia.fr,mail.origaia.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@osmose-physio.fr,osmose-physio.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@ospa-sothys.fr,ospa-sothys.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@ouvea-spa.fr,ouvea-spa.fr,mx01.ionos.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@oyat-spa.fr,oyat-spa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@ozenspa.fr,ozenspa.fr,mail-fr.securemail.pro,Non,Inexistant (SMTP 550),Inexistant
+contact@pailin-thaispa.fr,pailin-thaispa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@peaudours.com,peaudours.com,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@popalp.com,popalp.com,mx.popalp.com.cust.a.hostedemail.com,Non,Expéditeur rejeté par le serveur (code 503 : 5.7.0 Error: access denied for unknown[20.55.214.67]) - vérification impossible,Erreur (voir Resultat_SMTP)
+contact@purewellness.fr,purewellness.fr,mx4.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@quickpalace.com,quickpalace.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@relaisdamboise.com,relaisdamboise.com,relaisdamboise-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+contact@relaisdeshalles.com,relaisdeshalles.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@relaxeo.fr,relaxeo.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@rivage-thalasso.com,rivage-thalasso.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@rivahotel.com,rivahotel.com,rivahotel-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@rivesdescorbieres.com,rivesdescorbieres.com,host-lin-pl-mx85.infolien.net,Non,Incertain (Code 554 : 5.7.1 <contact@rivesdescorbieres.com>: Relay access denied),Incertain
+contact@roitheodore.com,roitheodore.com,mx0.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@roselier.com,roselier.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@salvanaspa.fr,salvanaspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@senssnes.fr,senssnes.fr,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@shizenschool.fr,shizenschool.fr,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@shofahspa.fr,shofahspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@sirilanna-thai-spa.fr,sirilanna-thai-spa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@skinandsens.com,skinandsens.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@soblue-hotel.com,soblue-hotel.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@sourcedhyle.fr,sourcedhyle.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@sources-hautplateau.com,sources-hautplateau.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@sources-pasithea.com,sources-pasithea.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spa5sens-narbonne.fr,spa5sens-narbonne.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spaakoya.fr,spaakoya.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spa-aoma.com,spa-aoma.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spadelanouere.fr,spadelanouere.fr,mx4.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@spadelea.fr,spadelea.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spadeleveche.fr,spadeleveche.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spadurhone.fr,spadurhone.fr,mx4.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@spah85.fr,spah85.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spa-institut-azema.fr,spa-institut-azema.fr,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.55.214.67])",Incertain
+contact@spakemiri.com,spakemiri.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spalagatine.fr,spalagatine.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spaledomebleu.fr,spaledomebleu.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spalelegalet.fr,spalelegalet.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spalemontanis.fr,spalemontanis.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spalevieuxport.com,spalevieuxport.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@spaluxuryparis.com,spaluxuryparis.com,,,Impossible (résolution MX échouée),Impossible (MX)
