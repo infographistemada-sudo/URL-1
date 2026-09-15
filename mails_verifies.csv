@@ -599,3 +599,103 @@ contact@aupetitmanoir.fr,aupetitmanoir.fr,,,Impossible (résolution MX échouée
 contact@auspadumonde.fr,auspadumonde.fr,mail.auspadumonde.fr,Non,Erreur réseau : [Errno -2] Name or service not known,Erreur (voir Resultat_SMTP)
 contact@auspalarochelle.fr,auspalarochelle.fr,,,Impossible (résolution MX échouée),Impossible (MX)
 contact@autempledessens.fr,autempledessens.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@auxenfantsdelaterre.fr,auxenfantsdelaterre.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@auxterrasses.fr,auxterrasses.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@axial-piscines.com,axial-piscines.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@backtorelax.fr,backtorelax.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@bainsdelopera.fr,bainsdelopera.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@bainsdepsom.fr,bainsdepsom.fr,ex4.mail.ovh.net,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@bainsosens.fr,bainsosens.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@balicina.fr,balicina.fr,g52.altospam.com,Non,Valide (SMTP 250),Valide
+contact@balneis.fr,balneis.fr,mail.balneis.fr,Non,"Expéditeur rejeté par le serveur (code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216]) - vérification impossible",Erreur (voir Resultat_SMTP)
+contact@banthaispa.fr,banthaispa.fr,spool.mail.gandi.net,Non,Inexistant (SMTP 550),Inexistant
+contact@bayahotel.com,bayahotel.com,mail.bayahotel.com,Non,Inexistant (SMTP 550),Inexistant
+contact@beaujoire-hotel.com,beaujoire-hotel.com,mta-gw.infomaniak.ch,Non,Valide (SMTP 250),Valide
+contact@beausite-talloires.com,beausite-talloires.com,beausitetalloires-com02b.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+contact@beingspa.fr,beingspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@belaroia.fr,belaroia.fr,belaroia-fr.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+contact@belleyme.com,belleyme.com,spool.mail.gandi.net,Non,Inexistant (SMTP 550),Inexistant
+contact@belopiscine.fr,belopiscine.fr,spool.mail.gandi.net,Non,Inexistant (SMTP 550),Inexistant
+contact@bestofboth.fr,bestofboth.fr,bestofboth-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+contact@bhavanaspa.fr,bhavanaspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@biarritz-camping.fr,biarritz-camping.fr,biarritzcamping-fr02b.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@bio-spa-esthetique.fr,bio-spa-esthetique.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@blackdiamond-spa.fr,blackdiamond-spa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@blackdoor.fr,blackdoor.fr,blackdoor-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+contact@blaspa.fr,blaspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@blueneryacademy.com,blueneryacademy.com,mx0.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216])",Incertain
+contact@bodhispa.fr,bodhispa.fr,mx1.jimdo.com,Non,Inexistant (SMTP 550),Inexistant
+contact@bodyleauperfect.fr,bodyleauperfect.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@bodysphere.fr,bodysphere.fr,mx3.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216])",Incertain
+contact@bonheur-piscines.fr,bonheur-piscines.fr,relay02.mct.eu,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@bonlaboureur.com,bonlaboureur.com,bonlaboureur-com.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+contact@borrelly-spa.com,borrelly-spa.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@bouddhaspa.fr,bouddhaspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@boulegan.fr,boulegan.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@brahmaspa.fr,brahmaspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@bzharmonie.fr,bzharmonie.fr,mx1.hostinger.com,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@cachemire-institut-spa.fr,cachemire-institut-spa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@calauma.com,calauma.com,aspmx.l.google.com,Non,Inexistant (SMTP 550),Inexistant
+contact@calmaparis.fr,calmaparis.fr,mx00.ionos.es,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@calypso-piscines.fr,calypso-piscines.fr,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216])",Incertain
+contact@camping-arche.me,camping-arche.me,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@camping-campilo.com,camping-campilo.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@camping-de-latlantique.fr,camping-de-latlantique.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@camping-de-mars.com,camping-de-mars.com,mx1.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216])",Incertain
+contact@camping-dubrec.com,camping-dubrec.com,mail.camping-dubrec.com,Non,Inexistant (SMTP 550),Inexistant
+contact@camping-du-cret.fr,camping-du-cret.fr,spool.mail.gandi.net,Non,Inexistant (SMTP 550),Inexistant
+contact@camping-foret.com,camping-foret.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@camping-la-gallouette.fr,camping-la-gallouette.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@camping-le-chateau.fr,camping-le-chateau.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@camping-ledauphin.com,camping-ledauphin.com,campingledauphin-com01i.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+contact@camping-les-acacias.com,camping-les-acacias.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@camping-les-arches.com,camping-les-arches.com,mx0.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216])",Incertain
+contact@camping-les-cigales.fr,camping-les-cigales.fr,mx0.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216])",Incertain
+contact@camping-les-grottes.fr,camping-les-grottes.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@camping-lespiedsdansleau.fr,camping-lespiedsdansleau.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@camping-les-ramieres.com,camping-les-ramieres.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@camping-mahana.fr,camping-mahana.fr,mx00.ionos.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@camping-moteno.com,camping-moteno.com,mx4.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216])",Incertain
+contact@camping-ocean.fr,camping-ocean.fr,mx.pyver.com,Non,Incertain (Code 454 : 4.7.1 <verification-bot.com>: Helo command rejected: Host not found),Incertain
+contact@camping-saint-lazare.fr,camping-saint-lazare.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@campus-esthetique.paris,campus-esthetique.paris,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@capsoleil.fr,capsoleil.fr,relais1.absys-beziers.com,Non,Inexistant (SMTP 550),Inexistant
+contact@caravanile.com,caravanile.com,caravanile-com.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+contact@carreblancspa.fr,carreblancspa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@carrepau.com,carrepau.com,mx0.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216])",Incertain
+contact@casaparadisu.com,casaparadisu.com,mail.casaparadisu.com,Non,Valide (SMTP 250),Valide
+contact@casteljeanson.com,casteljeanson.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@cenote-plaisir.fr,cenote-plaisir.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@cereine-bienetre.fr,cereine-bienetre.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@chaletdauron.fr,chaletdauron.fr,chaletdauron.fr,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@chaponfin.com,chaponfin.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@chateaudegermigney.com,chateaudegermigney.com,chateaudegermigney-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+contact@chateaudelazenay.com,chateaudelazenay.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@chateaudemaraval.fr,chateaudemaraval.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@chateaudemaubreuil.com,chateaudemaubreuil.com,aspmx.l.google.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@chateaudesperes.fr,chateaudesperes.fr,chateaudesperes-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+contact@chateaudulaunay.fr,chateaudulaunay.fr,chateaudulaunay.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@chateaudupalanquey.com,chateaudupalanquey.com,chateaudupalanquey.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@chateaulagraviere.com,chateaulagraviere.com,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216])",Incertain
+contact@chateauleognan.fr,chateauleognan.fr,mx01.ionos.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+contact@chateaulouise.com,chateaulouise.com,chateaulouise-com.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+contact@claloe.fr,claloe.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@comspa.fr,comspa.fr,ASPMX.L.GOOGLE.COM,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@cosmospa.fr,cosmospa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@cosypiscine.fr,cosypiscine.fr,mx4.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216])",Incertain
+contact@cryosoins.fr,cryosoins.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@cybele-vacances.com,cybele-vacances.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@darjnane.com,darjnane.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@devineunreve.fr,devineunreve.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@domaine-amaia.fr,domaine-amaia.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@domaine-bellevue.fr,domaine-bellevue.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@domainedebeaumont.fr,domainedebeaumont.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@domainedebeauvoir.fr,domainedebeauvoir.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@domainedechalveches.com,domainedechalveches.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@domainedelabarthe.com,domainedelabarthe.com,mx0.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [172.203.254.216])",Incertain
+contact@domainedelapierreronde.com,domainedelapierreronde.com,aspmx.l.google.com,Non,Inexistant (SMTP 550),Inexistant
+contact@domainepetitetour.fr,domainepetitetour.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@domainestcerice.com,domainestcerice.com,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@dominique-colonna.com,dominique-colonna.com,aspmx.l.google.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+contact@eauxparadis.fr,eauxparadis.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+contact@echaillon.com,echaillon.com,grey-mx.xsalto.net,Non,"Incertain (Code 554 : 5.7.1 Service unavailable; Client host [172.203.254.216] blocked using sbl-xbl.spamhaus.org; Listed by CSS, see https://check.spamhaus.org/query/ip/172.203.254.216)",Incertain
