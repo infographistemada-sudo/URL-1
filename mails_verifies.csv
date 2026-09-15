@@ -1099,3 +1099,103 @@ david.bellini@soredis.fr,soredis.fr,,,Impossible (résolution MX échouée),Impo
 david.bihannic@yrnet.com,yrnet.com,mxb-0021d901.gslb.pphosted.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
 david.blanc@mmv.fr,mmv.fr,mmv-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
 david.boyer@thalazur.fr,thalazur.fr,mx2.coaxis.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+david.brusadin@sibuet.com,sibuet.com,mxst1.wopr-hosting.com,Non,Erreur réseau : [Errno -2] Name or service not known,Erreur (voir Resultat_SMTP)
+david.bruzac@oceaniahotels.com,oceaniahotels.com,oceaniahotels-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+david.caldas@shenti.fr,shenti.fr,mx186.m2bp.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+david.cauchi@mamashelter.com,mamashelter.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <david.cauchi@mamashelter.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+david.charbonnier@bayrol.fr,bayrol.fr,bayrol-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+david.clef@caliceo.com,caliceo.com,caliceo-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+david.courvoisier@disney.com,disney.com,disney-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+david.douvin@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+david.folliot@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+david.geyssens@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+david.ghabi@regina-biarritz.com,regina-biarritz.com,,,Impossible (résolution MX échouée),Impossible (MX)
+david.goncalves@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+david.gonzalez@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <david.gonzalez@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+david.h@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <david.h@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+david.jamgotchian@lmaquabienetre.fr,lmaquabienetre.fr,spool.mail.gandi.net,Non,Inexistant (SMTP 550),Inexistant
+david.jaroniak@adagio-apartements.com,adagio-apartements.com,,,Impossible (résolution MX échouée),Impossible (MX)
+david.keichinger@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+david.lanta@bretesche.com,bretesche.com,smtp0.besse.fr,Non,Inexistant (SMTP 550),Inexistant
+david.lestelle@royalmansour.com,royalmansour.com,royalmansour-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+david.maron@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+david.moreau@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+david.paquet@raffles.com,raffles.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+david.pauly@mmv.fr,mmv.fr,mmv-fr.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+david.piquet@fourseasons.com,fourseasons.com,mx1.fourseasons.iphmx.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+david.riviere@saint-malo.fr,saint-malo.fr,saintmalo-fr01c.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+david.salin@chateaudetheoule.com,chateaudetheoule.com,,,Impossible (résolution MX échouée),Impossible (MX)
+david.vilay@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+david.vincent@groupepvcp.com,groupepvcp.com,groupepvcp-com.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+david@beyond-places.com,beyond-places.com,mx3-usg1.ppe-hosted.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+david@daviddrissler.fr,daviddrissler.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+david@lesmassagesdedavid.fr,lesmassagesdedavid.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+david@maisonduspa.fr,maisonduspa.fr,aspmx.l.google.com,Non,Inexistant (SMTP 550),Inexistant
+david@spabienetre.fr,spabienetre.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+davy.acheron@adagio-apartements.com,adagio-apartements.com,,,Impossible (résolution MX échouée),Impossible (MX)
+davy.farinha@dorchestercollection.com,dorchestercollection.com,eu-smtp-inbound-1.mimecast.com,Non,Incertain (Code 451 : Internal resource temporarily unavailable - https://community.mimecast.com/docs/DOC-1369#451 [W0fHk3o2N6KBX4srXl9x1A.uk207]),Incertain
+dax@cryopole.com,cryopole.com,cryopole-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+dboaglio@chainethermale.fr,chainethermale.fr,mail-relay01-inetum.chainethermale.fr,Non,Inexistant (SMTP 550),Inexistant
+dcairoche@groupebarriere.com,groupebarriere.com,aspmx.l.google.com,Non,Valide (SMTP 250),Valide
+dclemente@ponant.com,ponant.com,mxb-0094fe01.gslb.pphosted.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+ddagnicourt@groupebarriere.com,groupebarriere.com,aspmx.l.google.com,Non,Valide (SMTP 250),Valide
+ddavody@guerlain.fr,guerlain.fr,mxa-0024c501.gslb.pphosted.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+ddupas@groupebarriere.com,groupebarriere.com,aspmx.l.google.com,Non,Valide (SMTP 250),Valide
+deborah.farge@lepatiobienetre.fr,lepatiobienetre.fr,mx4.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.29.189.72])",Incertain
+deborah.hess@omvida.ch,omvida.ch,mx2.mail.hostpoint.ch,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+deborah.jung@bouclier-dor.com,bouclier-dor.com,,,Impossible (résolution MX échouée),Impossible (MX)
+deborah.levy@mywellnessdoc.com,mywellnessdoc.com,,,Impossible (résolution MX échouée),Impossible (MX)
+deborah.matossi@martinez.com,martinez.com,mail.martinez.com,Non,Inexistant (SMTP 550),Inexistant
+deborah.pineau@osublime.fr,osublime.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+delfi.franck@jjwhotels.com,jjwhotels.com,mxf.eu.mpssec.net,Non,Inexistant (SMTP 550),Inexistant
+delia@praticiennespa.fr,praticiennespa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+delphine.franchin@jjwhotels.com,jjwhotels.com,mxf.eu.mpssec.net,Non,Inexistant (SMTP 550),Inexistant
+delphine.jacquinot@deepnature.fr,deepnature.fr,mx0.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.29.189.72])",Incertain
+delphine.jouanno@valleedepratmeur.com,valleedepratmeur.com,aspmx.l.google.com,Non,Inexistant (SMTP 550),Inexistant
+delphine.quargnul@directricespa.fr,directricespa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+delphine.rongeat@lephebus.com,lephebus.com,lephebus-com.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+delphine@berland-massage.fr,berland-massage.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+delphine@duhamel-bienetre.fr,duhamel-bienetre.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+delphine@giboin-massage.fr,giboin-massage.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+delphine@spapraticienne.fr,spapraticienne.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+denis.frouin@ussim-vacances.org,ussim-vacances.org,,,Impossible (résolution MX échouée),Impossible (MX)
+denis.gauthier@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <denis.gauthier@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+denis@clossaintjacques.fr,clossaintjacques.fr,mx0.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.29.189.72])",Incertain
+denise.lerouge@fasthotel.com,fasthotel.com,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.29.189.72])",Incertain
+denone.veneegopaul@jardinsdecoppelia.com,jardinsdecoppelia.com,,,Impossible (résolution MX échouée),Impossible (MX)
+dfriant@groupe-atlantic.com,groupe-atlantic.com,mxb-004f0402.gslb.pphosted.com,Non,Valide (SMTP 250),Valide
+dgarcelon@sbm.mc,sbm.mc,mxb-0085f401.gslb.pphosted.com,Non,Inexistant (SMTP 550),Inexistant
+dgeig@groupe-atlantic.com,groupe-atlantic.com,mxb-004f0402.gslb.pphosted.com,Non,Valide (SMTP 250),Valide
+dgrimaud@diormail.com,diormail.com,mxa-0024c501.gslb.pphosted.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+dherbault@groupebarriere.com,groupebarriere.com,aspmx.l.google.com,Non,Valide (SMTP 250),Valide
+diana.dang@adagio-apartements.com,adagio-apartements.com,,,Impossible (résolution MX échouée),Impossible (MX)
+diana@ldbienetre.fr,ldbienetre.fr,mail.webador.com,Non,Incertain (Code 554 : 5.7.1 <diana@ldbienetre.fr>: Relay access denied),Incertain
+diane.oppo@obeoresidences.fr,obeoresidences.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+diane.pourageaud@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+diane.saveuse@villacosy.com,villacosy.com,mx01.1and1.fr,Non,Le serveur a coupé la connexion (blocage anti-spam probable côté entreprise),Erreur (voir Resultat_SMTP)
+diane@afaxbienetre.fr,afaxbienetre.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+diane@wellness-consulting.fr,wellness-consulting.fr,wellnessconsulting-fr02b.mail.protection.outlook.com,Non,Valide (SMTP 250),Valide
+diary.michon@spaetoile.fr,spaetoile.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+didier.cailleau@odalys.fr,odalys.fr,odalys-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+didier.perreol@chateaudemassillan.fr,chateaudemassillan.fr,chateaudemassillan-fr.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+didier.plaisance@directeuradjoint.fr,directeuradjoint.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+didier.ragonneau@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <didier.ragonneau@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+didier.rein@vacanceole.com,vacanceole.com,vacanceole-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+didier.ringwald@valvital.fr,valvital.fr,ASPMX.L.GOOGLE.com,Non,Valide (SMTP 250),Valide
+didier@calmazur.fr,calmazur.fr,mx1.mail.ovh.net,Non,"Incertain (Code 450 : 4.7.1 Client host rejected: cannot find your reverse hostname, [20.29.189.72])",Incertain
+didier@eauetbulles.fr,eauetbulles.fr,u21.altospam.com,Non,Inexistant (SMTP 550),Inexistant
+didier@unsouffledeprovence.fr,unsouffledeprovence.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+diego.llano@disney.com,disney.com,disney-com.mail.protection.outlook.com,Oui,Catch-all détecté (résultat non fiable),Catch-all (non fiable)
+dihya.haddak@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+dimitri.barbier@campanile.fr,campanile.fr,campanile-fr.mail.protection.outlook.com,Non,Inexistant (SMTP 550),Inexistant
+dimitri.chevalier@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <dimitri.chevalier@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+dimitri.devynck@talyapiscinespa.fr,talyapiscinespa.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+dimitri.ollivier@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <dimitri.ollivier@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+dina.delic@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
+dir.brides@brideslesbains.com,brideslesbains.com,spool.mail.gandi.net,Non,Inexistant (SMTP 550),Inexistant
+direction@hotel-pelisson.com,hotel-pelisson.com,,,Impossible (résolution MX échouée),Impossible (MX)
+direction@hotels-vinuales.com,hotels-vinuales.com,,,Impossible (résolution MX échouée),Impossible (MX)
+direction@laquarelle-centreaquatique.fr,laquarelle-centreaquatique.fr,,,Impossible (résolution MX échouée),Impossible (MX)
+divine.n@lepavillon-hotel.com,lepavillon-hotel.com,,,Impossible (résolution MX échouée),Impossible (MX)
+djaber.kesbi@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Incertain (Code 554 : 5.7.1 <djaber.kesbi@accor.com>: Recipient address rejected: Invalid-Recipient.),Incertain
+djamel.djezzaz@accor.com,accor.com,accor.in.tmes.trendmicro.eu,Non,Valide (SMTP 250),Valide
