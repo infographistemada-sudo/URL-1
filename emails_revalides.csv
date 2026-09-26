@@ -1341,3 +1341,105 @@ Emmanuel,Delfosse,emmanuel.delfosse@gna.com.br,,gna.com.br,gna-com-br.mail.prote
 Alice,d'Hervé,adherve@evolem.com,,evolem.com,smtp.google.com,Non,alice.dherve@evolem.com,Valide (SMTP 250),2,Élevé
 Paul,Ollivier,pollivier@pwpartners.com,,pwpartners.com,pwpartners-com.mail.protection.outlook.com,Non,pollivier@pwpartners.com,Valide (SMTP 250),1,Élevé
 Hugues,des Beauvais,hugues.desbeauvais@rothschildandco.com,,rothschildandco.com,rothschildandco-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Jonathan,Séret,jonathan.seret@lcl.fr,,lcl.fr,mercure.credit-agricole.fr,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Malake,Ezbiri,malake.ezbiri@eiffage.com,,eiffage.com,mxa-00284a02.gslb.pphosted.com,Non,malake.ezbiri@eiffage.com,Valide (SMTP 250),1,Élevé
+Alexis,Talbot,alexis.talbot@axione.com,,axione.com,mx1.axione.com,Non,,Aucun format validé par SMTP,8,Très faible
+Maxime,Lardoux,maxime.lardoux@hades-patrimoine.fr,,hades-patrimoine.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Leo,Pelletier,l.pelletier@braxton-am.com,,braxton-am.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Matthew,Halliday,matthew.halliday@bgo.com,,bgo.com,bgo-com.mail.protection.outlook.com,Non,matthew.halliday@bgo.com,Valide (SMTP 250),1,Élevé
+CFA,Génin,raphaël,,,,,,Ignoré (prénom/nom/domaine manquant),0,Indéterminé
+Loïc,de TREGLODE,loic.de-treglode@bred.fr,,bred.fr,bred-fr.mail.protection.outlook.com,Non,loic.de-treglode@bred.fr,Valide (SMTP 250),1,Élevé
+Tristan,Dassy,tristan.dassy@rothschildandco.com,,rothschildandco.com,rothschildandco-com.mail.protection.outlook.com,Non,tristan.dassy@rothschildandco.com,Valide (SMTP 250),1,Élevé
+Adil,Berhmani,adil.berhmani@rothschildandco.com,,rothschildandco.com,rothschildandco-com.mail.protection.outlook.com,Non,adil.berhmani@rothschildandco.com,Valide (SMTP 250),1,Élevé
+Matteo,Liucci,matteo.liucci@rothschildandco.com,,rothschildandco.com,rothschildandco-com.mail.protection.outlook.com,Non,matteo.liucci@rothschildandco.com,Valide (SMTP 250),1,Élevé
+Perrine,Andrio,perrine.andrio@barclays.com,,barclays.com,mxa-00146204.gslb.pphosted.com,Non,perrine.andrio@barclays.com,Valide (SMTP 250),1,Élevé
+Lucas,FAUCQUEMBERGUE,lucas.faucquembergue@altarea.com,,altarea.com,altarea-com.mail.protection.outlook.com,Non,lfaucquembergue@altarea.com,Valide (SMTP 250),4,Élevé
+Foucauld,Rouquayrol,frouquayrol@sevenstones.fr,,sevenstones.fr,sevenstones-fr.mail.protection.outlook.com,Non,foucauld.rouquayrol@sevenstones.fr,Valide (SMTP 250),2,Élevé
+Alexis,Billon-Flochlay,alexis.billon-flochlay@schroders.com,,schroders.com,eu-smtp-inbound-2.mimecast.com,Non,,Aucun format validé par SMTP,9,Très faible
+Vincent,Turbin,vincent.turbin@westone.fr,,westone.fr,mx1.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+Louise,Cannoni,louise.cannoni@corum.com,,corum.com,corum2015.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Charlène,Franiatte,charlene.franiatte@sparringcapital.com,,sparringcapital.com,mx01.hornetsecurity.com,Non,charlene.franiatte@sparringcapital.com,Valide (SMTP 250),1,Élevé
+Matthieu,Pasco,matthieu.pasco@hines.com,,hines.com,mx1.hines.iphmx.com,Non,matthieu.pasco@hines.com,Valide (SMTP 250),1,Élevé
+Vichet,Lyvong,vlyvong@brownfields.fr,,brownfields.fr,brownfields-fr.mail.protection.outlook.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Agathe,Hoffart,agathe.hoffart@magellim.com,,magellim.com,magellim-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Gratiane,DOUTAUD,gratiane.doutaud@osaepartners.com,,osaepartners.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Lorenzo,Oliveira,lorenzo.oliveira@covivio.immo,,covivio.immo,covivio-immo.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Arthur,de Latour,arthur.delatour@edr.com,,edr.com,mailgw2.edr.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Sébastien,Richer,sricher@dentressangle.com,,dentressangle.com,aspmx.l.google.com,Non,s.richer@dentressangle.com,Valide (SMTP 250),4,Élevé
+Arnaud,Giry,arnaud.giry@canopee-fo.com,,canopee-fo.com,aspmx.l.google.com,Non,,Aucun format validé par SMTP,8,Très faible
+Louis,DOUAY,l.douay@fnb-pe.com,,fnb-pe.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Augustin,Peyronne,augustin.peyronne@gimv.com,,gimv.com,gimv-com.mail.protection.outlook.com,Non,augustin.peyronne@gimv.com,Valide (SMTP 250),1,Élevé
+Pauline,Henry,pauline.henry@viparis.com,,viparis.com,mxa-001c6c01.gslb.pphosted.com,Non,,Aucun format validé par SMTP,8,Très faible
+Mathieu,Rouget,mrouget@wagram-cf.com,,wagram-cf.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+CFA,Langlet,thomas,,,,,,Ignoré (prénom/nom/domaine manquant),0,Indéterminé
+Henri,Renaud,henri.renaud@smbcgroup.com,,smbcgroup.com,mxa-00207001.gslb.pphosted.com,Non,hrenaud@smbcgroup.com,Valide (SMTP 250),4,Élevé
+François,Mallet,francois.mallet@aew.com,,aew.com,mxb-000ff301.gslb.pphosted.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+George,Fraser-Harding,george.fraser-harding@avivainvestors.com,,avivainvestors.com,cluster8.eu.messagelabs.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Raby,N'diaye,raby.ndiaye@swisslife-am.com,,swisslife-am.com,swisslifeam-com02c.mail.protection.outlook.com,Non,raby.ndiaye@swisslife-am.com,Valide (SMTP 250),1,Élevé
+Romain,Mizrahi,r.mizrahi@irivest.com,,irivest.com,mx0.mail.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+David,Farnan,david.farnan@data4group.com,,data4group.com,mx-mibc-fr-05.mailinblack.com,Non,david.farnan@data4group.com,Valide (SMTP 250),1,Élevé
+Lorenzo,Gava,lorenzo.gava@jpmorgan.com,,jpmorgan.com,cluster14.us.messagelabs.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Guillaume,Degauque,guillaume.degauque@picard.fr,,picard.fr,picard-fr.mail.protection.outlook.com,Non,guillaume_degauque@picard.fr,Valide (SMTP 250),6,Élevé
+Menetrier,Laurent,laurent.menetrier@lafrancaise-rem.com,,lafrancaise-rem.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Maxime,Jin,maxime.jin@groupeagrica.com,,groupeagrica.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Carlos,Magalhães,carlos.magalhaes@smbcgroup.com,,smbcgroup.com,mxa-00207001.gslb.pphosted.com,Non,cmagalhaes@smbcgroup.com,Valide (SMTP 250),4,Élevé
+Erwan,BOCQUET,e.bocquet@braxton-am.com,,braxton-am.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Alexandre,Marinho,alexandre.marinho@jpmorgan.com,,jpmorgan.com,cluster14.us.messagelabs.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Issam,Fradi,issam.fradi@sgcib.com,,sgcib.com,parmail.sgcib.com,Non,,Aucun format validé par SMTP,8,Très faible
+Thomas,Wakenhut,tw@tokorocapital.com,,tokorocapital.com,tokorocapital-com.mail.protection.outlook.com,Non,tw@tokorocapital.com,Valide (SMTP 250),1,Élevé
+Rebecca,Mondy,rebecca.mondy@jpmorgan.com,,jpmorgan.com,cluster14.us.messagelabs.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Antoine,Le Touzé,antoine.letouze@icade.fr,,icade.fr,mx1.hc2510-95.eu.iphmx.com,Non,,Aucun format validé par SMTP,8,Très faible
+Chenwei,Xu,chenwei.xu@eightadvisory.com,,eightadvisory.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Octave,Reynaud,octave.reynaud@neuflizeobc.fr,,neuflizeobc.fr,mail.neuflizeobc.fr,Non,,Aucun format validé par SMTP,8,Très faible
+Philippe,Vercherin,philippe.vercherin@creditmutuel.fr,,creditmutuel.fr,smtp1-inki.e-i.net,Non,philippe.vercherin@creditmutuel.fr,Valide (SMTP 250),1,Élevé
+Elise,Harlé,elise.harle@edr.com,,edr.com,mailgw2.edr.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Alix,Barthomeuf,alix.barthomeuf@corum.com,,corum.com,corum2015.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Charles,Garnier,charles.garnier@colliers.com,,colliers.com,mxa-0025eb03.gslb.pphosted.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Nathan,Demortier,nathan.demortier@morganstanley.com,,morganstanley.com,mx4.morganstanley.com,Non,nathan.demortier@morganstanley.com,Valide (SMTP 250),1,Élevé
+Grégoire,PAVIOT,gregoire.paviot@ey-parthenon.com,,ey-parthenon.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Niels,Andres,niels.andres@ca-indosuez.com,,ca-indosuez.com,mercure.credit-agricole.fr,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Maylis,Adham,maylis.adham@eol.fr,,eol.fr,eol-fr.mail.protection.outlook.com,Non,madham@eol.fr,Valide (SMTP 250),4,Élevé
+Alexia,Elbaz,alexia@botanybayam.com,,botanybayam.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+Karine,Vernier,karine.vernier@karma-vert.fr,,karma-vert.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Romain,Fontaine,romain.fontaine@corum.com,,corum.com,corum2015.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Charles Emmanuel,Kirouin,charles.emmanuel.kirouin@hsbc.com,,hsbc.com,mxa-00299f02.gslb.pphosted.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Emmanuel,Benchimol,e.benchimol@groupe5terres.fr,,groupe5terres.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Nicolas,Domenech,nicolas@elaia.com,,elaia.com,elaia-com.mail.protection.outlook.com,Non,ndomenech@elaia.com,Valide (SMTP 250),5,Élevé
+Cédric,Bédié,c.bedie@hudson-cie.com,,hudson-cie.com,q16.altospam.com,Non,cbedie@hudson-cie.com,Valide (SMTP 250),4,Élevé
+Raphaël,Lecomte,raphael.lecomte@jll.com,,jll.com,mx0b-00264502.pphosted.com,Non,raphael.lecomte@jll.com,Valide (SMTP 250),1,Élevé
+Alexandre,Cauwel,alexandre.cauwel@ca-cib.com,,ca-cib.com,smtpas2.ca-cib.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Fausto,Trevisan,fausto.trevisan@rothschildandco.com,,rothschildandco.com,rothschildandco-com.mail.protection.outlook.com,Non,fausto.trevisan@rothschildandco.com,Valide (SMTP 250),1,Élevé
+Malvina,Callay,mcallay@histoire-patrimoine.fr,,histoire-patrimoine.fr,histoirepatrimoine-fr02b.mail.protection.outlook.com,Non,mcallay@histoire-patrimoine.fr,Valide (SMTP 250),1,Élevé
+Mehdi,Lfid,mehdi.lfid@rothschildandco.com,,rothschildandco.com,rothschildandco-com.mail.protection.outlook.com,Non,mehdi.lfid@rothschildandco.com,Valide (SMTP 250),1,Élevé
+Louis-Victor,Aubertin,louis-victor.aubertin@lazard.com,,lazard.com,lazard-com.mail.protection.outlook.com,Non,louis-victor.aubertin@lazard.com,Valide (SMTP 250),1,Élevé
+Sacha,Laassiri,sacha.laassiri@kairos-am.com,,kairos-am.com,mx02.mail.icloud.com,Non,,Aucun format validé par SMTP,8,Très faible
+Ambre,Gellman,ambre.gellman@jpmorgan.com,,jpmorgan.com,cluster14.us.messagelabs.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Etienne,Ségalat,etienne.segalat@baltis.com,,baltis.com,baltis-com.mail.protection.outlook.com,Non,etienne.segalat@baltis.com,Valide (SMTP 250),1,Élevé
+Jean-Pierre,Veron,jp.veron@norev-finance.fr,,norev-finance.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Sofiane,Merazig,sofiane.merazig@ubs.com,,ubs.com,mx12.ubs.open.ch,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Laurent,Choukroun,lchoukroun@oreus.ai,,oreus.ai,smtp.google.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Atassé,Djibom,adjibom@pwpartners.com,,pwpartners.com,pwpartners-com.mail.protection.outlook.com,Non,adjibom@pwpartners.com,Valide (SMTP 250),1,Élevé
+Antony,El Khazen,antony.elkhazen@jpmorgan.com,,jpmorgan.com,cluster14.us.messagelabs.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Thomas,GASNIER,thomas.gasnier@credit-agricole.fr,,credit-agricole.fr,mercure.credit-agricole.fr,Non,,Aucun format validé par SMTP,8,Très faible
+Hugo,Bedoucha,hugo.bedoucha@bnpparibas.com,,bnpparibas.com,smtp-in-internet-usr-m.gslb.srv.bnpparibas,Non,hugo.bedoucha@bnpparibas.com,Valide (SMTP 250),1,Élevé
+Quentin,d'Estienne du Bourguet,quentin.destiennedubourguet@gs.com,,gs.com,mxb-0014b501.gslb.pphosted.com,Non,,Aucun format validé par SMTP,8,Très faible
+Séverine,MOUTON,severine.mouton@fnacdarty.com,,fnacdarty.com,fnacdarty-com.mail.protection.outlook.com,Non,severine.mouton@fnacdarty.com,Valide (SMTP 250),1,Élevé
+Eytan,Abizmil,eytan.abizmil@aew.com,,aew.com,mxb-000ff301.gslb.pphosted.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Jeongbin,Moon,jeongbin.moon@rothschildandco.com,,rothschildandco.com,rothschildandco-com.mail.protection.outlook.com,Non,jeongbin.moon@rothschildandco.com,Valide (SMTP 250),1,Élevé
+Baudoin,Wolff,baudoin.wolff@rothschildandco.com,,rothschildandco.com,rothschildandco-com.mail.protection.outlook.com,Non,baudoin.wolff@rothschildandco.com,Valide (SMTP 250),1,Élevé
+Santiago,Novoa Muñoz,santiago.novoa@esr.com,,esr.com,esr-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,9,Très faible
+Ali,YAZGÖREN,ali.yazgoren@equerreimmo.fr,,equerreimmo.fr,mx1.mail.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+Julien,Sotton,julien.sotton@gs.com,,gs.com,mxb-0014b501.gslb.pphosted.com,Non,julien.sotton@gs.com,Valide (SMTP 250),1,Élevé
+Akram,Lyakoby,akram.lyakoby@ca-cib.com,,ca-cib.com,smtpas2.ca-cib.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Benjamin,Henkel,benjamin.henkel@schroders.com,,schroders.com,eu-smtp-inbound-2.mimecast.com,Non,,Aucun format validé par SMTP,8,Très faible
+Sergio,Gallo,sergio.gallo@rothschildandco.com,,rothschildandco.com,rothschildandco-com.mail.protection.outlook.com,Non,sergio.gallo@rothschildandco.com,Valide (SMTP 250),1,Élevé
+Quentin-Alexis,Perrin-Ferrand,quentin-alexis.perrin-ferrand@gs.com,,gs.com,mxb-0014b501.gslb.pphosted.com,Non,quentin-alexis.perrin-ferrand@gs.com,Valide (SMTP 250),1,Élevé
+Didier,Louge,didier.louge@ifei.asso.fr,,ifei.asso.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Karolina,Czerkinsky,k.czerkinsky@intergestion.fr,,intergestion.fr,mx4.mail.ovh.net,Non,,Aucun format validé par SMTP,8,Très faible
+Armen,Sedefian,armen.sedefian@solges.fr,,solges.fr,mta-gw.infomaniak.ch,Non,armen@solges.fr,Valide (SMTP 250),8,Élevé
+Bilel,Khouchaf,bilel.khouchaf@etat.ge.ch,,etat.ge.ch,gwsmtp.ge.ch,Non,,Aucun format validé par SMTP,8,Très faible
+Sandra,BOCCIOLINI ??,sandra.bocciolini@dig-it.fr,,dig-it.fr,mail.dig-it.fr,Non,,Aucun format validé par SMTP,8,Très faible
+Grégory,LE BLAN,g.leblan@ammix-solutions.fr,,ammix-solutions.fr,,,,Impossible (résolution MX échouée),0,Indéterminé
+Cecilia,De Oliveira,cecilia.deoliveira@aew.com,,aew.com,mxb-000ff301.gslb.pphosted.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+Mohamed Amine,ABDELLI,m.abdelli@normacapital.fr,,normacapital.fr,normacapital-fr.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Laurine,JOUVET,laurine.jouvet@blackswan-re.com,,blackswan-re.com,,,,Impossible (résolution MX échouée),0,Indéterminé
