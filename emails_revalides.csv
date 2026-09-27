@@ -2037,3 +2037,18 @@ Hamza,Mouhssine,hamza.mouhssine@interpathadvisory.com,,interpathadvisory.com,int
 Malo,Trevalinet,malo.trevalinet@colliers.com,,colliers.com,mxa-0025eb03.gslb.pphosted.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
 Harry,NDOE,hndoe@savills.fr,,savills.fr,eu-smtp-inbound-2.mimecast.com,Non,,Aucun format validé par SMTP,8,Très faible
 Armen,SOGHOYAN,armen.soghoyan@bred.fr,,bred.fr,bred-fr.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,8,Très faible
+Bertaux,"Jaewon, Jean-Paul",jpbertaux@scamac-immo.com,,scamac-immo.com,scamacimmo-com01e.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,9,Très faible
+"Prevosteau, MRICS",Nicolas,nicolas.prevosteau@cbre.com,,cbre.com,mxa-001bfb01.gslb.pphosted.com,Non,,Aucun format validé par SMTP,9,Très faible
+"Van Beveren, MRICS",Patrick,patrick.vanbeveren@aew.com,,aew.com,mxa-000ff301.gslb.pphosted.com,Non,,Aucun format validé par SMTP,9,Très faible
+"Keller, CFA",Lucas,lucas.keller@aquila-capital.com,,aquila-capital.com,aquilacapital-com01e.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,9,Très faible
+"Génin, CFA",Raphaël,rgenin@euroland-corp.com,,euroland-corp.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+"Langlet, CFA",Thomas,t.langlet@montpensier.com,,montpensier.com,montpensier-com.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,9,Très faible
+"Guerra, CFA",Anthony,anthony.guerra@blackstone.com,,blackstone.com,mxa-00040b01.gslb.pphosted.com,Non,,Aucun format validé par SMTP,9,Très faible
+"Delarche, CFA",Augustin,augustin.delarche@macsf.fr,,macsf.fr,mx2.hc2302-5.eu.iphmx.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+"Griffond, CFA",Brice,brice.griffond@fgref.com,,fgref.com,mx4.mail.ovh.net,Non,,Aucun format validé par SMTP,9,Très faible
+"Zenati, MRICS",Oussama,oussama.zenati@cushwake.com,,cushwake.com,eu-smtp-inbound-1.mimecast.com,Non,,Aucun format validé par SMTP,9,Très faible
+"Lampaert, MRICS",Martin,martin.lampaert@robine-experts.com,,robine-experts.com,,,,Impossible (résolution MX échouée),0,Indéterminé
+"GOUDARD, CFA, CAIA",Alexandre,alexandre.goudard@lbpam.com,,lbpam.com,d327983.a.ess.de.barracudanetworks.com,Oui,,Catch-all confirmé (aucun format vérifiable par SMTP),0,Très faible
+"BENITAH, MRICS",Léo,lbenitah@uli.org,,uli.org,us-smtp-inbound-1.mimecast.com,Non,,Aucun format validé par SMTP,9,Très faible
+"Orvoën, CFA",Clément,clement.orvoen@viewss.fr,,viewss.fr,viewss-fr.mail.protection.outlook.com,Non,,Aucun format validé par SMTP,9,Très faible
+"Bart, CAIA",Maxime,maxime.bart@louvre.fr,,louvre.fr,de-smtp-inbound-1.mimecast.com,Non,,Aucun format validé par SMTP,9,Très faible
